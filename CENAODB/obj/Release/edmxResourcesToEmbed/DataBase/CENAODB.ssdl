@@ -1,0 +1,1210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CENAODBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbAgendaCitas">
+    <Key>
+      <PropertyRef Name="idCita" />
+    </Key>
+    <Property Name="idCita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numExpediente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="horaInicio" Type="datetime" Nullable="false" />
+    <Property Name="horaFinal" Type="datetime" Nullable="false" />
+    <Property Name="idEstado" Type="int" Nullable="false" />
+    <Property Name="comentario" Type="varchar(max)" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbCancelacionCitas">
+    <Key>
+      <PropertyRef Name="idCanCitas" />
+    </Key>
+    <Property Name="idCanCitas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCita" Type="int" Nullable="false" />
+    <Property Name="idMotCancelacion" Type="int" Nullable="false" />
+    <Property Name="comentario" Type="varchar(max)" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbCompletacionCitas">
+    <Key>
+      <PropertyRef Name="idCompCitas" />
+    </Key>
+    <Property Name="idCompCitas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTratamientoCita" Type="int" Nullable="false" />
+    <Property Name="idTipoPago" Type="int" />
+    <Property Name="monto" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="medicamentosRecetados" Type="varchar" MaxLength="250" />
+    <Property Name="comentario" Type="varchar(max)" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbEstado">
+    <Key>
+      <PropertyRef Name="idEstado" />
+    </Key>
+    <Property Name="idEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbFichaClinica">
+    <Key>
+      <PropertyRef Name="numExpediente" />
+    </Key>
+    <Property Name="numExpediente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="diagnostico" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="planTratamiento" Type="varchar(max)" Nullable="false" />
+    <Property Name="tipoSangre" Type="varchar" MaxLength="3" />
+    <Property Name="alergias" Type="varchar" MaxLength="100" />
+    <Property Name="antecedentesClinicos" Type="varchar" MaxLength="250" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbFunciones">
+    <Key>
+      <PropertyRef Name="idFuncion" />
+    </Key>
+    <Property Name="idFuncion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="esActivo" Type="bit" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbGaleria">
+    <Key>
+      <PropertyRef Name="idGaleria" />
+    </Key>
+    <Property Name="idGaleria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTraPaciente" Type="int" Nullable="false" />
+    <Property Name="imagen" Type="varbinary(max)" />
+    <Property Name="fechaImagen" Type="date" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbListadoTratamiento">
+    <Key>
+      <PropertyRef Name="idListaTratamiento" />
+    </Key>
+    <Property Name="idListaTratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbMotivosCancelacion">
+    <Key>
+      <PropertyRef Name="idMotCancelacion" />
+    </Key>
+    <Property Name="idMotCancelacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbPaciente">
+    <Key>
+      <PropertyRef Name="numExpediente" />
+    </Key>
+    <Property Name="numExpediente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idSucursal" Type="int" Nullable="false" />
+    <Property Name="identidad" Type="varchar" MaxLength="15" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="apellido" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sexo" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" />
+    <Property Name="fechaNacimiento" Type="date" />
+    <Property Name="profesion" Type="varchar" MaxLength="100" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" />
+    <Property Name="telefonoReferencia" Type="varchar" MaxLength="50" />
+    <Property Name="foto" Type="varbinary(max)" />
+    <Property Name="idEstado" Type="int" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbPantallas">
+    <Key>
+      <PropertyRef Name="idPantalla" />
+    </Key>
+    <Property Name="idPantalla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="40" />
+    <Property Name="ruta" Type="varchar" MaxLength="50" />
+    <Property Name="esActivo" Type="bit" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbPantallasFunciones">
+    <Key>
+      <PropertyRef Name="idPantallaFuncion" />
+    </Key>
+    <Property Name="idPantallaFuncion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPantalla" Type="int" Nullable="false" />
+    <Property Name="idFuncion" Type="int" Nullable="false" />
+    <Property Name="esActivo" Type="bit" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbRoles">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="esActivo" Type="bit" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbRolesFunciones">
+    <Key>
+      <PropertyRef Name="idRolFuncion" />
+    </Key>
+    <Property Name="idRolFuncion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idRol" Type="int" Nullable="false" />
+    <Property Name="idFuncion" Type="int" Nullable="false" />
+    <Property Name="esActivo" Type="bit" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbSucursal">
+    <Key>
+      <PropertyRef Name="idSucursal" />
+    </Key>
+    <Property Name="idSucursal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="principal" Type="bit" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbTipoPago">
+    <Key>
+      <PropertyRef Name="idTipoPago" />
+    </Key>
+    <Property Name="idTipoPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbTratamientoCitas">
+    <Key>
+      <PropertyRef Name="idTratamientoCita" />
+    </Key>
+    <Property Name="idTratamientoCita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCita" Type="int" Nullable="false" />
+    <Property Name="idListaTratamiento" Type="int" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbTratamientoPaciente">
+    <Key>
+      <PropertyRef Name="idTraPaciente" />
+    </Key>
+    <Property Name="idTraPaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numExpediente" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idListaTratamiento" Type="int" Nullable="false" />
+    <Property Name="idEstado" Type="int" Nullable="false" />
+    <Property Name="fechaInicio" Type="date" Nullable="false" />
+    <Property Name="fechaFinal" Type="date" />
+    <Property Name="comentario" Type="varchar(max)" />
+    <Property Name="montoPrima" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="montoMensualidad" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbUsuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codigoUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="binary" MaxLength="64" />
+    <Property Name="esActivo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbUsuariosRoles">
+    <Key>
+      <PropertyRef Name="IdUsuarioRol" />
+    </Key>
+    <Property Name="IdUsuarioRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="idRol" Type="int" Nullable="false" />
+    <Property Name="esActivo" Type="bit" Nullable="false" />
+    <Property Name="usuarioCrea" Type="int" Nullable="false" />
+    <Property Name="fechaCrea" Type="datetime" Nullable="false" />
+    <Property Name="usuarioModifica" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_tbAgenda_tbEstado_idEstado">
+    <End Role="tbEstado" Type="Self.tbEstado" Multiplicity="1" />
+    <End Role="tbAgendaCitas" Type="Self.tbAgendaCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEstado">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="tbAgendaCitas">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbAgenda_tbPaciente_numExpediente">
+    <End Role="tbPaciente" Type="Self.tbPaciente" Multiplicity="1" />
+    <End Role="tbAgendaCitas" Type="Self.tbAgendaCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPaciente">
+        <PropertyRef Name="numExpediente" />
+      </Principal>
+      <Dependent Role="tbAgendaCitas">
+        <PropertyRef Name="numExpediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbAgenda_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbAgendaCitas" Type="Self.tbAgendaCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbAgendaCitas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbAgenda_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbAgendaCitas" Type="Self.tbAgendaCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbAgendaCitas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCancelacionCitas_tbAgenda_idCita">
+    <End Role="tbAgendaCitas" Type="Self.tbAgendaCitas" Multiplicity="1" />
+    <End Role="tbCancelacionCitas" Type="Self.tbCancelacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAgendaCitas">
+        <PropertyRef Name="idCita" />
+      </Principal>
+      <Dependent Role="tbCancelacionCitas">
+        <PropertyRef Name="idCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCancelacionCitas_tbMotivosCancelacion_idMotCancelacion">
+    <End Role="tbMotivosCancelacion" Type="Self.tbMotivosCancelacion" Multiplicity="1" />
+    <End Role="tbCancelacionCitas" Type="Self.tbCancelacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMotivosCancelacion">
+        <PropertyRef Name="idMotCancelacion" />
+      </Principal>
+      <Dependent Role="tbCancelacionCitas">
+        <PropertyRef Name="idMotCancelacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCancelacionCitas_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbCancelacionCitas" Type="Self.tbCancelacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbCancelacionCitas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCancelacionCitas_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbCancelacionCitas" Type="Self.tbCancelacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbCancelacionCitas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCompletacionCitas_tbTiposPago_idtipoPago">
+    <End Role="tbTipoPago" Type="Self.tbTipoPago" Multiplicity="0..1" />
+    <End Role="tbCompletacionCitas" Type="Self.tbCompletacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbTipoPago">
+        <PropertyRef Name="idTipoPago" />
+      </Principal>
+      <Dependent Role="tbCompletacionCitas">
+        <PropertyRef Name="idTipoPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCompletacionCitas_tbTratamientoCitas_idTratamientoCita">
+    <End Role="tbTratamientoCitas" Type="Self.tbTratamientoCitas" Multiplicity="1" />
+    <End Role="tbCompletacionCitas" Type="Self.tbCompletacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbTratamientoCitas">
+        <PropertyRef Name="idTratamientoCita" />
+      </Principal>
+      <Dependent Role="tbCompletacionCitas">
+        <PropertyRef Name="idTratamientoCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCompletacionCitas_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbCompletacionCitas" Type="Self.tbCompletacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbCompletacionCitas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCompletacionCitas_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbCompletacionCitas" Type="Self.tbCompletacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbCompletacionCitas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbEstado_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbEstado" Type="Self.tbEstado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbEstado">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbEstado_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbEstado" Type="Self.tbEstado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbEstado">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFichaClinica_tbPaciente_numExpediente">
+    <End Role="tbPaciente" Type="Self.tbPaciente" Multiplicity="1" />
+    <End Role="tbFichaClinica" Type="Self.tbFichaClinica" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbPaciente">
+        <PropertyRef Name="numExpediente" />
+      </Principal>
+      <Dependent Role="tbFichaClinica">
+        <PropertyRef Name="numExpediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFichaClinica_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbFichaClinica" Type="Self.tbFichaClinica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbFichaClinica">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFichaClinica_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbFichaClinica" Type="Self.tbFichaClinica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbFichaClinica">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFunciones_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbFunciones" Type="Self.tbFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbFunciones">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFunciones_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbFunciones" Type="Self.tbFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbFunciones">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGaleria_tbTratamientoPaciente_idTraPaciente">
+    <End Role="tbTratamientoPaciente" Type="Self.tbTratamientoPaciente" Multiplicity="1" />
+    <End Role="tbGaleria" Type="Self.tbGaleria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbTratamientoPaciente">
+        <PropertyRef Name="idTraPaciente" />
+      </Principal>
+      <Dependent Role="tbGaleria">
+        <PropertyRef Name="idTraPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGaleria_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbGaleria" Type="Self.tbGaleria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbGaleria">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGaleria_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbGaleria" Type="Self.tbGaleria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbGaleria">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbListadoTratamiento_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbListadoTratamiento" Type="Self.tbListadoTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbListadoTratamiento">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbListadoTratamiento_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbListadoTratamiento" Type="Self.tbListadoTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbListadoTratamiento">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbMotivosCancelacion_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbMotivosCancelacion" Type="Self.tbMotivosCancelacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbMotivosCancelacion">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbMotivosCancelacion_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbMotivosCancelacion" Type="Self.tbMotivosCancelacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbMotivosCancelacion">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPaciente_tbEstado_idEstado">
+    <End Role="tbEstado" Type="Self.tbEstado" Multiplicity="1" />
+    <End Role="tbPaciente" Type="Self.tbPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEstado">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="tbPaciente">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallas_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbPantallas" Type="Self.tbPantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPantallas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallas_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbPantallas" Type="Self.tbPantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPantallas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallasFunciones_tbFunciones_idFuncion">
+    <End Role="tbFunciones" Type="Self.tbFunciones" Multiplicity="1" />
+    <End Role="tbPantallasFunciones" Type="Self.tbPantallasFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbFunciones">
+        <PropertyRef Name="idFuncion" />
+      </Principal>
+      <Dependent Role="tbPantallasFunciones">
+        <PropertyRef Name="idFuncion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallasFunciones_tbPantallas_idPantalla">
+    <End Role="tbPantallas" Type="Self.tbPantallas" Multiplicity="1" />
+    <End Role="tbPantallasFunciones" Type="Self.tbPantallasFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPantallas">
+        <PropertyRef Name="idPantalla" />
+      </Principal>
+      <Dependent Role="tbPantallasFunciones">
+        <PropertyRef Name="idPantalla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallasFunciones_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbPantallasFunciones" Type="Self.tbPantallasFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPantallasFunciones">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallasFunciones_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbPantallasFunciones" Type="Self.tbPantallasFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPantallasFunciones">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRoles_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbRoles" Type="Self.tbRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbRoles">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRoles_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbRoles" Type="Self.tbRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbRoles">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRolesFunciones_tbFunciones_idFuncion">
+    <End Role="tbFunciones" Type="Self.tbFunciones" Multiplicity="1" />
+    <End Role="tbRolesFunciones" Type="Self.tbRolesFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbFunciones">
+        <PropertyRef Name="idFuncion" />
+      </Principal>
+      <Dependent Role="tbRolesFunciones">
+        <PropertyRef Name="idFuncion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRolesFunciones_tbRoles_idRol">
+    <End Role="tbRoles" Type="Self.tbRoles" Multiplicity="1" />
+    <End Role="tbRolesFunciones" Type="Self.tbRolesFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbRoles">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="tbRolesFunciones">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRolesFunciones_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbRolesFunciones" Type="Self.tbRolesFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbRolesFunciones">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRolesFunciones_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbRolesFunciones" Type="Self.tbRolesFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbRolesFunciones">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSucursal_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbSucursal" Type="Self.tbSucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbSucursal">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSucursal_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbSucursal" Type="Self.tbSucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbSucursal">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTipoPago_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbTipoPago" Type="Self.tbTipoPago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTipoPago">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTipoPago_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbTipoPago" Type="Self.tbTipoPago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTipoPago">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoCitas_tbAgendaCitas_idCita">
+    <End Role="tbAgendaCitas" Type="Self.tbAgendaCitas" Multiplicity="1" />
+    <End Role="tbTratamientoCitas" Type="Self.tbTratamientoCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAgendaCitas">
+        <PropertyRef Name="idCita" />
+      </Principal>
+      <Dependent Role="tbTratamientoCitas">
+        <PropertyRef Name="idCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoCitas_tbListadoTratamiento_idlistaTratamiento">
+    <End Role="tbListadoTratamiento" Type="Self.tbListadoTratamiento" Multiplicity="1" />
+    <End Role="tbTratamientoCitas" Type="Self.tbTratamientoCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbListadoTratamiento">
+        <PropertyRef Name="idListaTratamiento" />
+      </Principal>
+      <Dependent Role="tbTratamientoCitas">
+        <PropertyRef Name="idListaTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoCitas_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbTratamientoCitas" Type="Self.tbTratamientoCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTratamientoCitas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoCitas_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbTratamientoCitas" Type="Self.tbTratamientoCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTratamientoCitas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbEstado_idEstado">
+    <End Role="tbEstado" Type="Self.tbEstado" Multiplicity="1" />
+    <End Role="tbTratamientoPaciente" Type="Self.tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEstado">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbListadoTratamiento_idListaTratamiento">
+    <End Role="tbListadoTratamiento" Type="Self.tbListadoTratamiento" Multiplicity="1" />
+    <End Role="tbTratamientoPaciente" Type="Self.tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbListadoTratamiento">
+        <PropertyRef Name="idListaTratamiento" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="idListaTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbPaciente_numExpediente">
+    <End Role="tbPaciente" Type="Self.tbPaciente" Multiplicity="1" />
+    <End Role="tbTratamientoPaciente" Type="Self.tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPaciente">
+        <PropertyRef Name="numExpediente" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="numExpediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbTratamientoPaciente" Type="Self.tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbTratamientoPaciente" Type="Self.tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuariosRoles_tbRoles_idRol">
+    <End Role="tbRoles" Type="Self.tbRoles" Multiplicity="1" />
+    <End Role="tbUsuariosRoles" Type="Self.tbUsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbRoles">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="tbUsuariosRoles">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuariosRoles_tbUsuarios_idUsuario">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbUsuariosRoles" Type="Self.tbUsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbUsuariosRoles">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuariosRoles_tbUsuarios_usuarioCrea">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="1" />
+    <End Role="tbUsuariosRoles" Type="Self.tbUsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbUsuariosRoles">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuariosRoles_tbUsuarios_usuarioModifica">
+    <End Role="tbUsuarios" Type="Self.tbUsuarios" Multiplicity="0..1" />
+    <End Role="tbUsuariosRoles" Type="Self.tbUsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbUsuariosRoles">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_CREAR_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigoUsuario" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_GENERAR_NUM_EXPEDIENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_GETCITASDIARIAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_INGRESOSMENSUALES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idSucursal" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_INGRESOSPORTRATAMIENTOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fechaInicio" Type="date" Mode="In" />
+    <Parameter Name="fechaFinal" Type="date" Mode="In" />
+    <Parameter Name="idSucursal" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_INICIO_SESION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigoUsuario" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="SP_RESETEAR_PASSWORD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idUsuario" Type="int" Mode="In" />
+    <Parameter Name="newPassword" Type="varchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="CENAODBModelStoreContainer">
+    <EntitySet Name="tbAgendaCitas" EntityType="Self.tbAgendaCitas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCancelacionCitas" EntityType="Self.tbCancelacionCitas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbCompletacionCitas" EntityType="Self.tbCompletacionCitas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbEstado" EntityType="Self.tbEstado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbFichaClinica" EntityType="Self.tbFichaClinica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbFunciones" EntityType="Self.tbFunciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbGaleria" EntityType="Self.tbGaleria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbListadoTratamiento" EntityType="Self.tbListadoTratamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbMotivosCancelacion" EntityType="Self.tbMotivosCancelacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbPaciente" EntityType="Self.tbPaciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbPantallas" EntityType="Self.tbPantallas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbPantallasFunciones" EntityType="Self.tbPantallasFunciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbRoles" EntityType="Self.tbRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbRolesFunciones" EntityType="Self.tbRolesFunciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbSucursal" EntityType="Self.tbSucursal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTipoPago" EntityType="Self.tbTipoPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTratamientoCitas" EntityType="Self.tbTratamientoCitas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbTratamientoPaciente" EntityType="Self.tbTratamientoPaciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUsuarios" EntityType="Self.tbUsuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbUsuariosRoles" EntityType="Self.tbUsuariosRoles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tbAgenda_tbEstado_idEstado" Association="Self.FK_tbAgenda_tbEstado_idEstado">
+      <End Role="tbEstado" EntitySet="tbEstado" />
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbAgenda_tbPaciente_numExpediente" Association="Self.FK_tbAgenda_tbPaciente_numExpediente">
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbAgenda_tbUsuarios_usuarioCrea" Association="Self.FK_tbAgenda_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbAgenda_tbUsuarios_usuarioModifica" Association="Self.FK_tbAgenda_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCancelacionCitas_tbAgenda_idCita" Association="Self.FK_tbCancelacionCitas_tbAgenda_idCita">
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+      <End Role="tbCancelacionCitas" EntitySet="tbCancelacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCancelacionCitas_tbMotivosCancelacion_idMotCancelacion" Association="Self.FK_tbCancelacionCitas_tbMotivosCancelacion_idMotCancelacion">
+      <End Role="tbMotivosCancelacion" EntitySet="tbMotivosCancelacion" />
+      <End Role="tbCancelacionCitas" EntitySet="tbCancelacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCancelacionCitas_tbUsuarios_usuarioCrea" Association="Self.FK_tbCancelacionCitas_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCancelacionCitas" EntitySet="tbCancelacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCancelacionCitas_tbUsuarios_usuarioModifica" Association="Self.FK_tbCancelacionCitas_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCancelacionCitas" EntitySet="tbCancelacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCompletacionCitas_tbTiposPago_idtipoPago" Association="Self.FK_tbCompletacionCitas_tbTiposPago_idtipoPago">
+      <End Role="tbTipoPago" EntitySet="tbTipoPago" />
+      <End Role="tbCompletacionCitas" EntitySet="tbCompletacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCompletacionCitas_tbTratamientoCitas_idTratamientoCita" Association="Self.FK_tbCompletacionCitas_tbTratamientoCitas_idTratamientoCita">
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+      <End Role="tbCompletacionCitas" EntitySet="tbCompletacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCompletacionCitas_tbUsuarios_usuarioCrea" Association="Self.FK_tbCompletacionCitas_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCompletacionCitas" EntitySet="tbCompletacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCompletacionCitas_tbUsuarios_usuarioModifica" Association="Self.FK_tbCompletacionCitas_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCompletacionCitas" EntitySet="tbCompletacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbEstado_tbUsuarios_usuarioCrea" Association="Self.FK_tbEstado_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbEstado" EntitySet="tbEstado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbEstado_tbUsuarios_usuarioModifica" Association="Self.FK_tbEstado_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbEstado" EntitySet="tbEstado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFichaClinica_tbPaciente_numExpediente" Association="Self.FK_tbFichaClinica_tbPaciente_numExpediente">
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+      <End Role="tbFichaClinica" EntitySet="tbFichaClinica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFichaClinica_tbUsuarios_usuarioCrea" Association="Self.FK_tbFichaClinica_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFichaClinica" EntitySet="tbFichaClinica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFichaClinica_tbUsuarios_usuarioModifica" Association="Self.FK_tbFichaClinica_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFichaClinica" EntitySet="tbFichaClinica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFunciones_tbUsuarios_usuarioCrea" Association="Self.FK_tbFunciones_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFunciones" EntitySet="tbFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFunciones_tbUsuarios_usuarioModifica" Association="Self.FK_tbFunciones_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFunciones" EntitySet="tbFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGaleria_tbTratamientoPaciente_idTraPaciente" Association="Self.FK_tbGaleria_tbTratamientoPaciente_idTraPaciente">
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+      <End Role="tbGaleria" EntitySet="tbGaleria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGaleria_tbUsuarios_usuarioCrea" Association="Self.FK_tbGaleria_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbGaleria" EntitySet="tbGaleria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGaleria_tbUsuarios_usuarioModifica" Association="Self.FK_tbGaleria_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbGaleria" EntitySet="tbGaleria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbListadoTratamiento_tbUsuarios_usuarioCrea" Association="Self.FK_tbListadoTratamiento_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbListadoTratamiento" EntitySet="tbListadoTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbListadoTratamiento_tbUsuarios_usuarioModifica" Association="Self.FK_tbListadoTratamiento_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbListadoTratamiento" EntitySet="tbListadoTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbMotivosCancelacion_tbUsuarios_usuarioCrea" Association="Self.FK_tbMotivosCancelacion_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbMotivosCancelacion" EntitySet="tbMotivosCancelacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbMotivosCancelacion_tbUsuarios_usuarioModifica" Association="Self.FK_tbMotivosCancelacion_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbMotivosCancelacion" EntitySet="tbMotivosCancelacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPaciente_tbEstado_idEstado" Association="Self.FK_tbPaciente_tbEstado_idEstado">
+      <End Role="tbEstado" EntitySet="tbEstado" />
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallas_tbUsuarios_usuarioCrea" Association="Self.FK_tbPantallas_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPantallas" EntitySet="tbPantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallas_tbUsuarios_usuarioModifica" Association="Self.FK_tbPantallas_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPantallas" EntitySet="tbPantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallasFunciones_tbFunciones_idFuncion" Association="Self.FK_tbPantallasFunciones_tbFunciones_idFuncion">
+      <End Role="tbFunciones" EntitySet="tbFunciones" />
+      <End Role="tbPantallasFunciones" EntitySet="tbPantallasFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallasFunciones_tbPantallas_idPantalla" Association="Self.FK_tbPantallasFunciones_tbPantallas_idPantalla">
+      <End Role="tbPantallas" EntitySet="tbPantallas" />
+      <End Role="tbPantallasFunciones" EntitySet="tbPantallasFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallasFunciones_tbUsuarios_usuarioCrea" Association="Self.FK_tbPantallasFunciones_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPantallasFunciones" EntitySet="tbPantallasFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallasFunciones_tbUsuarios_usuarioModifica" Association="Self.FK_tbPantallasFunciones_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPantallasFunciones" EntitySet="tbPantallasFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRoles_tbUsuarios_usuarioCrea" Association="Self.FK_tbRoles_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbRoles" EntitySet="tbRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRoles_tbUsuarios_usuarioModifica" Association="Self.FK_tbRoles_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbRoles" EntitySet="tbRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRolesFunciones_tbFunciones_idFuncion" Association="Self.FK_tbRolesFunciones_tbFunciones_idFuncion">
+      <End Role="tbFunciones" EntitySet="tbFunciones" />
+      <End Role="tbRolesFunciones" EntitySet="tbRolesFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRolesFunciones_tbRoles_idRol" Association="Self.FK_tbRolesFunciones_tbRoles_idRol">
+      <End Role="tbRoles" EntitySet="tbRoles" />
+      <End Role="tbRolesFunciones" EntitySet="tbRolesFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRolesFunciones_tbUsuarios_usuarioCrea" Association="Self.FK_tbRolesFunciones_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbRolesFunciones" EntitySet="tbRolesFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRolesFunciones_tbUsuarios_usuarioModifica" Association="Self.FK_tbRolesFunciones_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbRolesFunciones" EntitySet="tbRolesFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSucursal_tbUsuarios_usuarioCrea" Association="Self.FK_tbSucursal_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbSucursal" EntitySet="tbSucursal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSucursal_tbUsuarios_usuarioModifica" Association="Self.FK_tbSucursal_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbSucursal" EntitySet="tbSucursal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTipoPago_tbUsuarios_usuarioCrea" Association="Self.FK_tbTipoPago_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTipoPago" EntitySet="tbTipoPago" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTipoPago_tbUsuarios_usuarioModifica" Association="Self.FK_tbTipoPago_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTipoPago" EntitySet="tbTipoPago" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoCitas_tbAgendaCitas_idCita" Association="Self.FK_tbTratamientoCitas_tbAgendaCitas_idCita">
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoCitas_tbListadoTratamiento_idlistaTratamiento" Association="Self.FK_tbTratamientoCitas_tbListadoTratamiento_idlistaTratamiento">
+      <End Role="tbListadoTratamiento" EntitySet="tbListadoTratamiento" />
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoCitas_tbUsuarios_usuarioCrea" Association="Self.FK_tbTratamientoCitas_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoCitas_tbUsuarios_usuarioModifica" Association="Self.FK_tbTratamientoCitas_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbEstado_idEstado" Association="Self.FK_tbTratamientoPaciente_tbEstado_idEstado">
+      <End Role="tbEstado" EntitySet="tbEstado" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbListadoTratamiento_idListaTratamiento" Association="Self.FK_tbTratamientoPaciente_tbListadoTratamiento_idListaTratamiento">
+      <End Role="tbListadoTratamiento" EntitySet="tbListadoTratamiento" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbPaciente_numExpediente" Association="Self.FK_tbTratamientoPaciente_tbPaciente_numExpediente">
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbUsuarios_usuarioCrea" Association="Self.FK_tbTratamientoPaciente_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbUsuarios_usuarioModifica" Association="Self.FK_tbTratamientoPaciente_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuariosRoles_tbRoles_idRol" Association="Self.FK_tbUsuariosRoles_tbRoles_idRol">
+      <End Role="tbRoles" EntitySet="tbRoles" />
+      <End Role="tbUsuariosRoles" EntitySet="tbUsuariosRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuariosRoles_tbUsuarios_idUsuario" Association="Self.FK_tbUsuariosRoles_tbUsuarios_idUsuario">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbUsuariosRoles" EntitySet="tbUsuariosRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuariosRoles_tbUsuarios_usuarioCrea" Association="Self.FK_tbUsuariosRoles_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbUsuariosRoles" EntitySet="tbUsuariosRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuariosRoles_tbUsuarios_usuarioModifica" Association="Self.FK_tbUsuariosRoles_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbUsuariosRoles" EntitySet="tbUsuariosRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CENAODBModelStoreContainer" CdmEntityContainer="CENAODBEntities">
+    <FunctionImportMapping FunctionImportName="SP_GENERAR_NUM_EXPEDIENTE" FunctionName="CENAODBModel.Store.SP_GENERAR_NUM_EXPEDIENTE" />
+    <FunctionImportMapping FunctionImportName="SP_GETCITASDIARIAS" FunctionName="CENAODBModel.Store.SP_GETCITASDIARIAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CENAODBModel.SP_GETCITASDIARIAS_Result">
+          <ScalarProperty Name="TOTALCITAS" ColumnName="TOTALCITAS" />
+          <ScalarProperty Name="TOTALCANCELADAS" ColumnName="TOTALCANCELADAS" />
+          <ScalarProperty Name="TOTALCOMPLETADAS" ColumnName="TOTALCOMPLETADAS" />
+          <ScalarProperty Name="TOTALPACIENTES" ColumnName="TOTALPACIENTES" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_RESETEAR_PASSWORD" FunctionName="CENAODBModel.Store.SP_RESETEAR_PASSWORD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CENAODBModel.SP_RESETEAR_PASSWORD_Result">
+          <ScalarProperty Name="MessageError" ColumnName="MessageError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_CREAR_USUARIO" FunctionName="CENAODBModel.Store.SP_CREAR_USUARIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CENAODBModel.SP_CREAR_USUARIO_Result">
+          <ScalarProperty Name="MessageError" ColumnName="MessageError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_INICIO_SESION" FunctionName="CENAODBModel.Store.SP_INICIO_SESION">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CENAODBModel.SP_INICIO_SESION_Result">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="codigoUsuario" ColumnName="codigoUsuario" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_INGRESOSMENSUALES" FunctionName="CENAODBModel.Store.SP_INGRESOSMENSUALES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CENAODBModel.SP_INGRESOSMENSUALES_Result">
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_INGRESOSPORTRATAMIENTOS" FunctionName="CENAODBModel.Store.SP_INGRESOSPORTRATAMIENTOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CENAODBModel.SP_INGRESOSPORTRATAMIENTOS_Result">
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Tratamiento" ColumnName="Tratamiento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbCancelacionCitas">
+      <EntityTypeMapping TypeName="CENAODBModel.tbCancelacionCitas">
+        <MappingFragment StoreEntitySet="tbCancelacionCitas">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="idMotCancelacion" ColumnName="idMotCancelacion" />
+          <ScalarProperty Name="idCita" ColumnName="idCita" />
+          <ScalarProperty Name="idCanCitas" ColumnName="idCanCitas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbEstado">
+      <EntityTypeMapping TypeName="CENAODBModel.tbEstado">
+        <MappingFragment StoreEntitySet="tbEstado">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbFichaClinica">
+      <EntityTypeMapping TypeName="CENAODBModel.tbFichaClinica">
+        <MappingFragment StoreEntitySet="tbFichaClinica">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="antecedentesClinicos" ColumnName="antecedentesClinicos" />
+          <ScalarProperty Name="tipoSangre" ColumnName="tipoSangre" />
+          <ScalarProperty Name="alergias" ColumnName="alergias" />
+          <ScalarProperty Name="planTratamiento" ColumnName="planTratamiento" />
+          <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+          <ScalarProperty Name="numExpediente" ColumnName="numExpediente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbFunciones">
+      <EntityTypeMapping TypeName="CENAODBModel.tbFunciones">
+        <MappingFragment StoreEntitySet="tbFunciones">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idFuncion" ColumnName="idFuncion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbGaleria">
+      <EntityTypeMapping TypeName="CENAODBModel.tbGaleria">
+        <MappingFragment StoreEntitySet="tbGaleria">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaImagen" ColumnName="fechaImagen" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="idTraPaciente" ColumnName="idTraPaciente" />
+          <ScalarProperty Name="idGaleria" ColumnName="idGaleria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbListadoTratamiento">
+      <EntityTypeMapping TypeName="CENAODBModel.tbListadoTratamiento">
+        <MappingFragment StoreEntitySet="tbListadoTratamiento">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="idListaTratamiento" ColumnName="idListaTratamiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMotivosCancelacion">
+      <EntityTypeMapping TypeName="CENAODBModel.tbMotivosCancelacion">
+        <MappingFragment StoreEntitySet="tbMotivosCancelacion">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="idMotCancelacion" ColumnName="idMotCancelacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPaciente">
+      <EntityTypeMapping TypeName="CENAODBModel.tbPaciente">
+        <MappingFragment StoreEntitySet="tbPaciente">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="telefonoReferencia" ColumnName="telefonoReferencia" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="profesion" ColumnName="profesion" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="identidad" ColumnName="identidad" />
+          <ScalarProperty Name="idSucursal" ColumnName="idSucursal" />
+          <ScalarProperty Name="numExpediente" ColumnName="numExpediente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPantallas">
+      <EntityTypeMapping TypeName="CENAODBModel.tbPantallas">
+        <MappingFragment StoreEntitySet="tbPantallas">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="ruta" ColumnName="ruta" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idPantalla" ColumnName="idPantalla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPantallasFunciones">
+      <EntityTypeMapping TypeName="CENAODBModel.tbPantallasFunciones">
+        <MappingFragment StoreEntitySet="tbPantallasFunciones">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="idFuncion" ColumnName="idFuncion" />
+          <ScalarProperty Name="idPantalla" ColumnName="idPantalla" />
+          <ScalarProperty Name="idPantallaFuncion" ColumnName="idPantallaFuncion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRoles">
+      <EntityTypeMapping TypeName="CENAODBModel.tbRoles">
+        <MappingFragment StoreEntitySet="tbRoles">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRolesFunciones">
+      <EntityTypeMapping TypeName="CENAODBModel.tbRolesFunciones">
+        <MappingFragment StoreEntitySet="tbRolesFunciones">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="idFuncion" ColumnName="idFuncion" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idRolFuncion" ColumnName="idRolFuncion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbSucursal">
+      <EntityTypeMapping TypeName="CENAODBModel.tbSucursal">
+        <MappingFragment StoreEntitySet="tbSucursal">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="principal" ColumnName="principal" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idSucursal" ColumnName="idSucursal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTipoPago">
+      <EntityTypeMapping TypeName="CENAODBModel.tbTipoPago">
+        <MappingFragment StoreEntitySet="tbTipoPago">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="idTipoPago" ColumnName="idTipoPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTratamientoPaciente">
+      <EntityTypeMapping TypeName="CENAODBModel.tbTratamientoPaciente">
+        <MappingFragment StoreEntitySet="tbTratamientoPaciente">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="montoMensualidad" ColumnName="montoMensualidad" />
+          <ScalarProperty Name="montoPrima" ColumnName="montoPrima" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="fechaFinal" ColumnName="fechaFinal" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+          <ScalarProperty Name="idListaTratamiento" ColumnName="idListaTratamiento" />
+          <ScalarProperty Name="numExpediente" ColumnName="numExpediente" />
+          <ScalarProperty Name="idTraPaciente" ColumnName="idTraPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUsuarios">
+      <EntityTypeMapping TypeName="CENAODBModel.tbUsuarios">
+        <MappingFragment StoreEntitySet="tbUsuarios">
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="codigoUsuario" ColumnName="codigoUsuario" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbUsuariosRoles">
+      <EntityTypeMapping TypeName="CENAODBModel.tbUsuariosRoles">
+        <MappingFragment StoreEntitySet="tbUsuariosRoles">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="IdUsuarioRol" ColumnName="IdUsuarioRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbTratamientoCitas">
+      <EntityTypeMapping TypeName="CENAODBModel.tbTratamientoCitas">
+        <MappingFragment StoreEntitySet="tbTratamientoCitas">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="idListaTratamiento" ColumnName="idListaTratamiento" />
+          <ScalarProperty Name="idCita" ColumnName="idCita" />
+          <ScalarProperty Name="idTratamientoCita" ColumnName="idTratamientoCita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCompletacionCitas">
+      <EntityTypeMapping TypeName="CENAODBModel.tbCompletacionCitas">
+        <MappingFragment StoreEntitySet="tbCompletacionCitas">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="medicamentosRecetados" ColumnName="medicamentosRecetados" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="idTipoPago" ColumnName="idTipoPago" />
+          <ScalarProperty Name="idTratamientoCita" ColumnName="idTratamientoCita" />
+          <ScalarProperty Name="idCompCitas" ColumnName="idCompCitas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbAgendaCitas">
+      <EntityTypeMapping TypeName="CENAODBModel.tbAgendaCitas">
+        <MappingFragment StoreEntitySet="tbAgendaCitas">
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+          <ScalarProperty Name="horaFinal" ColumnName="horaFinal" />
+          <ScalarProperty Name="horaInicio" ColumnName="horaInicio" />
+          <ScalarProperty Name="numExpediente" ColumnName="numExpediente" />
+          <ScalarProperty Name="idCita" ColumnName="idCita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

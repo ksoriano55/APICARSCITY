@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICARCITY", "APICARCITY.csproj", "{BB749FC0-EB36-474F-8D8E-CC03FA5E6A6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARCITYDB", "CENAODB\CARCITYDB.csproj", "{D20A9984-C6A3-4605-866B-18C13ABB9645}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB749FC0-EB36-474F-8D8E-CC03FA5E6A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB749FC0-EB36-474F-8D8E-CC03FA5E6A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB749FC0-EB36-474F-8D8E-CC03FA5E6A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB749FC0-EB36-474F-8D8E-CC03FA5E6A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D20A9984-C6A3-4605-866B-18C13ABB9645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D20A9984-C6A3-4605-866B-18C13ABB9645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D20A9984-C6A3-4605-866B-18C13ABB9645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D20A9984-C6A3-4605-866B-18C13ABB9645}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F28B7C29-CFB1-49EB-9BD4-BF97B4C2BD28}
+	EndGlobalSection
+EndGlobal

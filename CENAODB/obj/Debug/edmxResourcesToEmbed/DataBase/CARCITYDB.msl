@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarCityDBModelStoreContainer" CdmEntityContainer="CarCityDBEntities">
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="CarCityDBModel.clientes">
+        <MappingFragment StoreEntitySet="clientes">
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="colores">
+      <EntityTypeMapping TypeName="CarCityDBModel.colores">
+        <MappingFragment StoreEntitySet="colores">
+          <ScalarProperty Name="colorId" ColumnName="colorId" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IngresoOrden">
+      <EntityTypeMapping TypeName="CarCityDBModel.IngresoOrden">
+        <MappingFragment StoreEntitySet="IngresoOrden">
+          <ScalarProperty Name="ordenId" ColumnName="ordenId" />
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="mecanicaId" ColumnName="mecanicaId" />
+          <ScalarProperty Name="colorId" ColumnName="colorId" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
+          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+          <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+          <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+          <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+          <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+          <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoMecanica">
+      <EntityTypeMapping TypeName="CarCityDBModel.tipoMecanica">
+        <MappingFragment StoreEntitySet="tipoMecanica">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="mecanicaId" ColumnName="mecanicaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

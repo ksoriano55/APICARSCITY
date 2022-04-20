@@ -1,0 +1,1408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CENAODBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CENAODBEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_GETCITASDIARIAS" ReturnType="Collection(CENAODBModel.SP_GETCITASDIARIAS_Result)" />
+    <FunctionImport Name="SP_GENERAR_NUM_EXPEDIENTE" ReturnType="Collection(String)" />
+    <FunctionImport Name="SP_RESETEAR_PASSWORD" ReturnType="Collection(CENAODBModel.SP_RESETEAR_PASSWORD_Result)">
+      <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+      <Parameter Name="newPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CREAR_USUARIO" ReturnType="Collection(CENAODBModel.SP_CREAR_USUARIO_Result)">
+      <Parameter Name="codigoUsuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INICIO_SESION" ReturnType="Collection(CENAODBModel.SP_INICIO_SESION_Result)">
+      <Parameter Name="codigoUsuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INGRESOSMENSUALES" ReturnType="Collection(CENAODBModel.SP_INGRESOSMENSUALES_Result)">
+      <Parameter Name="idSucursal" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INGRESOSPORTRATAMIENTOS" ReturnType="Collection(CENAODBModel.SP_INGRESOSPORTRATAMIENTOS_Result)">
+      <Parameter Name="fechaInicio" Mode="In" Type="DateTime" />
+      <Parameter Name="fechaFinal" Mode="In" Type="DateTime" />
+      <Parameter Name="idSucursal" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tbCancelacionCitas" EntityType="CENAODBModel.tbCancelacionCitas" />
+    <EntitySet Name="tbEstado" EntityType="CENAODBModel.tbEstado" />
+    <EntitySet Name="tbFichaClinica" EntityType="CENAODBModel.tbFichaClinica" />
+    <EntitySet Name="tbFunciones" EntityType="CENAODBModel.tbFunciones" />
+    <EntitySet Name="tbGaleria" EntityType="CENAODBModel.tbGaleria" />
+    <EntitySet Name="tbListadoTratamiento" EntityType="CENAODBModel.tbListadoTratamiento" />
+    <EntitySet Name="tbMotivosCancelacion" EntityType="CENAODBModel.tbMotivosCancelacion" />
+    <EntitySet Name="tbPaciente" EntityType="CENAODBModel.tbPaciente" />
+    <EntitySet Name="tbPantallas" EntityType="CENAODBModel.tbPantallas" />
+    <EntitySet Name="tbPantallasFunciones" EntityType="CENAODBModel.tbPantallasFunciones" />
+    <EntitySet Name="tbRoles" EntityType="CENAODBModel.tbRoles" />
+    <EntitySet Name="tbRolesFunciones" EntityType="CENAODBModel.tbRolesFunciones" />
+    <EntitySet Name="tbSucursal" EntityType="CENAODBModel.tbSucursal" />
+    <EntitySet Name="tbTipoPago" EntityType="CENAODBModel.tbTipoPago" />
+    <EntitySet Name="tbTratamientoPaciente" EntityType="CENAODBModel.tbTratamientoPaciente" />
+    <EntitySet Name="tbUsuarios" EntityType="CENAODBModel.tbUsuarios" />
+    <EntitySet Name="tbUsuariosRoles" EntityType="CENAODBModel.tbUsuariosRoles" />
+    <AssociationSet Name="FK_tbCancelacionCitas_tbMotivosCancelacion_idMotCancelacion" Association="CENAODBModel.FK_tbCancelacionCitas_tbMotivosCancelacion_idMotCancelacion">
+      <End Role="tbMotivosCancelacion" EntitySet="tbMotivosCancelacion" />
+      <End Role="tbCancelacionCitas" EntitySet="tbCancelacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCancelacionCitas_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbCancelacionCitas_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCancelacionCitas" EntitySet="tbCancelacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCancelacionCitas_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbCancelacionCitas_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCancelacionCitas" EntitySet="tbCancelacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbEstado_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbEstado_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbEstado" EntitySet="tbEstado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbEstado_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbEstado_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbEstado" EntitySet="tbEstado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPaciente_tbEstado_idEstado" Association="CENAODBModel.FK_tbPaciente_tbEstado_idEstado">
+      <End Role="tbEstado" EntitySet="tbEstado" />
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbEstado_idEstado" Association="CENAODBModel.FK_tbTratamientoPaciente_tbEstado_idEstado">
+      <End Role="tbEstado" EntitySet="tbEstado" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFichaClinica_tbPaciente_numExpediente" Association="CENAODBModel.FK_tbFichaClinica_tbPaciente_numExpediente">
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+      <End Role="tbFichaClinica" EntitySet="tbFichaClinica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFichaClinica_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbFichaClinica_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFichaClinica" EntitySet="tbFichaClinica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFichaClinica_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbFichaClinica_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFichaClinica" EntitySet="tbFichaClinica" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFunciones_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbFunciones_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFunciones" EntitySet="tbFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbFunciones_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbFunciones_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbFunciones" EntitySet="tbFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallasFunciones_tbFunciones_idFuncion" Association="CENAODBModel.FK_tbPantallasFunciones_tbFunciones_idFuncion">
+      <End Role="tbFunciones" EntitySet="tbFunciones" />
+      <End Role="tbPantallasFunciones" EntitySet="tbPantallasFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRolesFunciones_tbFunciones_idFuncion" Association="CENAODBModel.FK_tbRolesFunciones_tbFunciones_idFuncion">
+      <End Role="tbFunciones" EntitySet="tbFunciones" />
+      <End Role="tbRolesFunciones" EntitySet="tbRolesFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGaleria_tbTratamientoPaciente_idTraPaciente" Association="CENAODBModel.FK_tbGaleria_tbTratamientoPaciente_idTraPaciente">
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+      <End Role="tbGaleria" EntitySet="tbGaleria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGaleria_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbGaleria_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbGaleria" EntitySet="tbGaleria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbGaleria_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbGaleria_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbGaleria" EntitySet="tbGaleria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbListadoTratamiento_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbListadoTratamiento_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbListadoTratamiento" EntitySet="tbListadoTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbListadoTratamiento_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbListadoTratamiento_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbListadoTratamiento" EntitySet="tbListadoTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbListadoTratamiento_idListaTratamiento" Association="CENAODBModel.FK_tbTratamientoPaciente_tbListadoTratamiento_idListaTratamiento">
+      <End Role="tbListadoTratamiento" EntitySet="tbListadoTratamiento" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbMotivosCancelacion_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbMotivosCancelacion_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbMotivosCancelacion" EntitySet="tbMotivosCancelacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbMotivosCancelacion_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbMotivosCancelacion_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbMotivosCancelacion" EntitySet="tbMotivosCancelacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPaciente_tbSucursal_idSucursal" Association="CENAODBModel.FK_tbPaciente_tbSucursal_idSucursal">
+      <End Role="tbSucursal" EntitySet="tbSucursal" />
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPaciente_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbPaciente_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPaciente_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbPaciente_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbPaciente_numExpediente" Association="CENAODBModel.FK_tbTratamientoPaciente_tbPaciente_numExpediente">
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallas_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbPantallas_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPantallas" EntitySet="tbPantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallas_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbPantallas_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPantallas" EntitySet="tbPantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallasFunciones_tbPantallas_idPantalla" Association="CENAODBModel.FK_tbPantallasFunciones_tbPantallas_idPantalla">
+      <End Role="tbPantallas" EntitySet="tbPantallas" />
+      <End Role="tbPantallasFunciones" EntitySet="tbPantallasFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallasFunciones_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbPantallasFunciones_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPantallasFunciones" EntitySet="tbPantallasFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbPantallasFunciones_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbPantallasFunciones_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbPantallasFunciones" EntitySet="tbPantallasFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRoles_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbRoles_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbRoles" EntitySet="tbRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRoles_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbRoles_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbRoles" EntitySet="tbRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRolesFunciones_tbRoles_idRol" Association="CENAODBModel.FK_tbRolesFunciones_tbRoles_idRol">
+      <End Role="tbRoles" EntitySet="tbRoles" />
+      <End Role="tbRolesFunciones" EntitySet="tbRolesFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuariosRoles_tbRoles_idRol" Association="CENAODBModel.FK_tbUsuariosRoles_tbRoles_idRol">
+      <End Role="tbRoles" EntitySet="tbRoles" />
+      <End Role="tbUsuariosRoles" EntitySet="tbUsuariosRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRolesFunciones_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbRolesFunciones_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbRolesFunciones" EntitySet="tbRolesFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbRolesFunciones_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbRolesFunciones_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbRolesFunciones" EntitySet="tbRolesFunciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSucursal_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbSucursal_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbSucursal" EntitySet="tbSucursal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbSucursal_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbSucursal_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbSucursal" EntitySet="tbSucursal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTipoPago_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbTipoPago_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTipoPago" EntitySet="tbTipoPago" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTipoPago_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbTipoPago_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTipoPago" EntitySet="tbTipoPago" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbTratamientoPaciente_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoPaciente_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbTratamientoPaciente_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTratamientoPaciente" EntitySet="tbTratamientoPaciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuariosRoles_tbUsuarios_idUsuario" Association="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_idUsuario">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbUsuariosRoles" EntitySet="tbUsuariosRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuariosRoles_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbUsuariosRoles" EntitySet="tbUsuariosRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbUsuariosRoles_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbUsuariosRoles" EntitySet="tbUsuariosRoles" />
+    </AssociationSet>
+    <EntitySet Name="tbTratamientoCitas" EntityType="CENAODBModel.tbTratamientoCitas" />
+    <AssociationSet Name="FK_tbTratamientoCitas_tbListadoTratamiento_idlistaTratamiento" Association="CENAODBModel.FK_tbTratamientoCitas_tbListadoTratamiento_idlistaTratamiento">
+      <End Role="tbListadoTratamiento" EntitySet="tbListadoTratamiento" />
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoCitas_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbTratamientoCitas_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoCitas_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbTratamientoCitas_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+    </AssociationSet>
+    <EntitySet Name="tbCompletacionCitas" EntityType="CENAODBModel.tbCompletacionCitas" />
+    <AssociationSet Name="FK_tbCompletacionCitas_tbTiposPago_idtipoPago" Association="CENAODBModel.FK_tbCompletacionCitas_tbTiposPago_idtipoPago">
+      <End Role="tbTipoPago" EntitySet="tbTipoPago" />
+      <End Role="tbCompletacionCitas" EntitySet="tbCompletacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCompletacionCitas_tbTratamientoCitas_idTratamientoCita" Association="CENAODBModel.FK_tbCompletacionCitas_tbTratamientoCitas_idTratamientoCita">
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+      <End Role="tbCompletacionCitas" EntitySet="tbCompletacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCompletacionCitas_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbCompletacionCitas_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCompletacionCitas" EntitySet="tbCompletacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCompletacionCitas_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbCompletacionCitas_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbCompletacionCitas" EntitySet="tbCompletacionCitas" />
+    </AssociationSet>
+    <EntitySet Name="tbAgendaCitas" EntityType="CENAODBModel.tbAgendaCitas" />
+    <AssociationSet Name="FK_tbAgenda_tbEstado_idEstado" Association="CENAODBModel.FK_tbAgenda_tbEstado_idEstado">
+      <End Role="tbEstado" EntitySet="tbEstado" />
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbAgenda_tbPaciente_numExpediente" Association="CENAODBModel.FK_tbAgenda_tbPaciente_numExpediente">
+      <End Role="tbPaciente" EntitySet="tbPaciente" />
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbAgenda_tbUsuarios_usuarioCrea" Association="CENAODBModel.FK_tbAgenda_tbUsuarios_usuarioCrea">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbAgenda_tbUsuarios_usuarioModifica" Association="CENAODBModel.FK_tbAgenda_tbUsuarios_usuarioModifica">
+      <End Role="tbUsuarios" EntitySet="tbUsuarios" />
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbCancelacionCitas_tbAgenda_idCita" Association="CENAODBModel.FK_tbCancelacionCitas_tbAgenda_idCita">
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+      <End Role="tbCancelacionCitas" EntitySet="tbCancelacionCitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbTratamientoCitas_tbAgendaCitas_idCita" Association="CENAODBModel.FK_tbTratamientoCitas_tbAgendaCitas_idCita">
+      <End Role="tbAgendaCitas" EntitySet="tbAgendaCitas" />
+      <End Role="tbTratamientoCitas" EntitySet="tbTratamientoCitas" />
+    </AssociationSet>
+    <FunctionImport Name="SP_RPT_INGRESOSPORTRATAMIENTOSDETALLADO" ReturnType="Collection(CENAODBModel.SP_RPT_INGRESOSPORTRATAMIENTOSDETALLADO_Result)" />
+  </EntityContainer>
+  <ComplexType Name="SP_GETCITASDIARIAS_Result">
+    <Property Type="Int32" Name="TOTALCITAS" Nullable="true" />
+    <Property Type="Int32" Name="TOTALCANCELADAS" Nullable="true" />
+    <Property Type="Int32" Name="TOTALCOMPLETADAS" Nullable="true" />
+    <Property Type="Int32" Name="TOTALPACIENTES" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_CREAR_USUARIO_Result">
+    <Property Type="String" Name="MessageError" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_RESETEAR_PASSWORD_Result">
+    <Property Type="String" Name="MessageError" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_INICIO_SESION_Result">
+    <Property Type="Int32" Name="idUsuario" Nullable="false" />
+    <Property Type="String" Name="codigoUsuario" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="esActivo" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_INGRESOSMENSUALES_Result">
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="String" Name="Mes" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="SP_INGRESOSPORTRATAMIENTOS_Result">
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="String" Name="Tratamiento" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <EntityType Name="tbCancelacionCitas">
+    <Key>
+      <PropertyRef Name="idCanCitas" />
+    </Key>
+    <Property Name="idCanCitas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCita" Type="Int32" Nullable="false" />
+    <Property Name="idMotCancelacion" Type="Int32" Nullable="false" />
+    <Property Name="comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbMotivosCancelacion" Relationship="CENAODBModel.FK_tbCancelacionCitas_tbMotivosCancelacion_idMotCancelacion" FromRole="tbCancelacionCitas" ToRole="tbMotivosCancelacion" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbCancelacionCitas_tbUsuarios_usuarioCrea" FromRole="tbCancelacionCitas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbCancelacionCitas_tbUsuarios_usuarioModifica" FromRole="tbCancelacionCitas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbAgendaCitas" Relationship="CENAODBModel.FK_tbCancelacionCitas_tbAgenda_idCita" FromRole="tbCancelacionCitas" ToRole="tbAgendaCitas" />
+  </EntityType>
+  <EntityType Name="tbEstado">
+    <Key>
+      <PropertyRef Name="idEstado" />
+    </Key>
+    <Property Name="idEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbEstado_tbUsuarios_usuarioCrea" FromRole="tbEstado" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbEstado_tbUsuarios_usuarioModifica" FromRole="tbEstado" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbPaciente" Relationship="CENAODBModel.FK_tbPaciente_tbEstado_idEstado" FromRole="tbEstado" ToRole="tbPaciente" />
+    <NavigationProperty Name="tbTratamientoPaciente" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbEstado_idEstado" FromRole="tbEstado" ToRole="tbTratamientoPaciente" />
+    <NavigationProperty Name="tbAgendaCitas" Relationship="CENAODBModel.FK_tbAgenda_tbEstado_idEstado" FromRole="tbEstado" ToRole="tbAgendaCitas" />
+  </EntityType>
+  <EntityType Name="tbFichaClinica">
+    <Key>
+      <PropertyRef Name="numExpediente" />
+    </Key>
+    <Property Name="numExpediente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="diagnostico" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="planTratamiento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="alergias" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tipoSangre" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="antecedentesClinicos" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbPaciente" Relationship="CENAODBModel.FK_tbFichaClinica_tbPaciente_numExpediente" FromRole="tbFichaClinica" ToRole="tbPaciente" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbFichaClinica_tbUsuarios_usuarioCrea" FromRole="tbFichaClinica" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbFichaClinica_tbUsuarios_usuarioModifica" FromRole="tbFichaClinica" ToRole="tbUsuarios" />
+  </EntityType>
+  <EntityType Name="tbFunciones">
+    <Key>
+      <PropertyRef Name="idFuncion" />
+    </Key>
+    <Property Name="idFuncion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbFunciones_tbUsuarios_usuarioCrea" FromRole="tbFunciones" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbFunciones_tbUsuarios_usuarioModifica" FromRole="tbFunciones" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbPantallasFunciones" Relationship="CENAODBModel.FK_tbPantallasFunciones_tbFunciones_idFuncion" FromRole="tbFunciones" ToRole="tbPantallasFunciones" />
+    <NavigationProperty Name="tbRolesFunciones" Relationship="CENAODBModel.FK_tbRolesFunciones_tbFunciones_idFuncion" FromRole="tbFunciones" ToRole="tbRolesFunciones" />
+  </EntityType>
+  <EntityType Name="tbGaleria">
+    <Key>
+      <PropertyRef Name="idGaleria" />
+    </Key>
+    <Property Name="idGaleria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idTraPaciente" Type="Int32" Nullable="false" />
+    <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="fechaImagen" Type="DateTime" Precision="0" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbTratamientoPaciente" Relationship="CENAODBModel.FK_tbGaleria_tbTratamientoPaciente_idTraPaciente" FromRole="tbGaleria" ToRole="tbTratamientoPaciente" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbGaleria_tbUsuarios_usuarioCrea" FromRole="tbGaleria" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbGaleria_tbUsuarios_usuarioModifica" FromRole="tbGaleria" ToRole="tbUsuarios" />
+  </EntityType>
+  <EntityType Name="tbListadoTratamiento">
+    <Key>
+      <PropertyRef Name="idListaTratamiento" />
+    </Key>
+    <Property Name="idListaTratamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbListadoTratamiento_tbUsuarios_usuarioCrea" FromRole="tbListadoTratamiento" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbListadoTratamiento_tbUsuarios_usuarioModifica" FromRole="tbListadoTratamiento" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbTratamientoPaciente" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbListadoTratamiento_idListaTratamiento" FromRole="tbListadoTratamiento" ToRole="tbTratamientoPaciente" />
+    <NavigationProperty Name="tbTratamientoCitas" Relationship="CENAODBModel.FK_tbTratamientoCitas_tbListadoTratamiento_idlistaTratamiento" FromRole="tbListadoTratamiento" ToRole="tbTratamientoCitas" />
+  </EntityType>
+  <EntityType Name="tbMotivosCancelacion">
+    <Key>
+      <PropertyRef Name="idMotCancelacion" />
+    </Key>
+    <Property Name="idMotCancelacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbCancelacionCitas" Relationship="CENAODBModel.FK_tbCancelacionCitas_tbMotivosCancelacion_idMotCancelacion" FromRole="tbMotivosCancelacion" ToRole="tbCancelacionCitas" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbMotivosCancelacion_tbUsuarios_usuarioCrea" FromRole="tbMotivosCancelacion" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbMotivosCancelacion_tbUsuarios_usuarioModifica" FromRole="tbMotivosCancelacion" ToRole="tbUsuarios" />
+  </EntityType>
+  <EntityType Name="tbPaciente">
+    <Key>
+      <PropertyRef Name="numExpediente" />
+    </Key>
+    <Property Name="numExpediente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idSucursal" Type="Int32" Nullable="false" />
+    <Property Name="identidad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Precision="0" />
+    <Property Name="profesion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefonoReferencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="idEstado" Type="Int32" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbEstado" Relationship="CENAODBModel.FK_tbPaciente_tbEstado_idEstado" FromRole="tbPaciente" ToRole="tbEstado" />
+    <NavigationProperty Name="tbFichaClinica" Relationship="CENAODBModel.FK_tbFichaClinica_tbPaciente_numExpediente" FromRole="tbPaciente" ToRole="tbFichaClinica" />
+    <NavigationProperty Name="tbSucursal" Relationship="CENAODBModel.FK_tbPaciente_tbSucursal_idSucursal" FromRole="tbPaciente" ToRole="tbSucursal" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbPaciente_tbUsuarios_usuarioCrea" FromRole="tbPaciente" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbPaciente_tbUsuarios_usuarioModifica" FromRole="tbPaciente" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbTratamientoPaciente" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbPaciente_numExpediente" FromRole="tbPaciente" ToRole="tbTratamientoPaciente" />
+    <NavigationProperty Name="tbAgendaCitas" Relationship="CENAODBModel.FK_tbAgenda_tbPaciente_numExpediente" FromRole="tbPaciente" ToRole="tbAgendaCitas" />
+  </EntityType>
+  <EntityType Name="tbPantallas">
+    <Key>
+      <PropertyRef Name="idPantalla" />
+    </Key>
+    <Property Name="idPantalla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ruta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="esActivo" Type="Boolean" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbPantallas_tbUsuarios_usuarioCrea" FromRole="tbPantallas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbPantallas_tbUsuarios_usuarioModifica" FromRole="tbPantallas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbPantallasFunciones" Relationship="CENAODBModel.FK_tbPantallasFunciones_tbPantallas_idPantalla" FromRole="tbPantallas" ToRole="tbPantallasFunciones" />
+  </EntityType>
+  <EntityType Name="tbPantallasFunciones">
+    <Key>
+      <PropertyRef Name="idPantallaFuncion" />
+    </Key>
+    <Property Name="idPantallaFuncion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPantalla" Type="Int32" Nullable="false" />
+    <Property Name="idFuncion" Type="Int32" Nullable="false" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbFunciones" Relationship="CENAODBModel.FK_tbPantallasFunciones_tbFunciones_idFuncion" FromRole="tbPantallasFunciones" ToRole="tbFunciones" />
+    <NavigationProperty Name="tbPantallas" Relationship="CENAODBModel.FK_tbPantallasFunciones_tbPantallas_idPantalla" FromRole="tbPantallasFunciones" ToRole="tbPantallas" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbPantallasFunciones_tbUsuarios_usuarioCrea" FromRole="tbPantallasFunciones" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbPantallasFunciones_tbUsuarios_usuarioModifica" FromRole="tbPantallasFunciones" ToRole="tbUsuarios" />
+  </EntityType>
+  <EntityType Name="tbRoles">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbRoles_tbUsuarios_usuarioCrea" FromRole="tbRoles" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbRoles_tbUsuarios_usuarioModifica" FromRole="tbRoles" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbRolesFunciones" Relationship="CENAODBModel.FK_tbRolesFunciones_tbRoles_idRol" FromRole="tbRoles" ToRole="tbRolesFunciones" />
+    <NavigationProperty Name="tbUsuariosRoles" Relationship="CENAODBModel.FK_tbUsuariosRoles_tbRoles_idRol" FromRole="tbRoles" ToRole="tbUsuariosRoles" />
+  </EntityType>
+  <EntityType Name="tbRolesFunciones">
+    <Key>
+      <PropertyRef Name="idRolFuncion" />
+    </Key>
+    <Property Name="idRolFuncion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <Property Name="idFuncion" Type="Int32" Nullable="false" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" />
+    <Property Name="fechaCrea" Type="DateTime" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbFunciones" Relationship="CENAODBModel.FK_tbRolesFunciones_tbFunciones_idFuncion" FromRole="tbRolesFunciones" ToRole="tbFunciones" />
+    <NavigationProperty Name="tbRoles" Relationship="CENAODBModel.FK_tbRolesFunciones_tbRoles_idRol" FromRole="tbRolesFunciones" ToRole="tbRoles" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbRolesFunciones_tbUsuarios_usuarioCrea" FromRole="tbRolesFunciones" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbRolesFunciones_tbUsuarios_usuarioModifica" FromRole="tbRolesFunciones" ToRole="tbUsuarios" />
+  </EntityType>
+  <EntityType Name="tbSucursal">
+    <Key>
+      <PropertyRef Name="idSucursal" />
+    </Key>
+    <Property Name="idSucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="principal" Type="Boolean" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbPaciente" Relationship="CENAODBModel.FK_tbPaciente_tbSucursal_idSucursal" FromRole="tbSucursal" ToRole="tbPaciente" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbSucursal_tbUsuarios_usuarioCrea" FromRole="tbSucursal" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbSucursal_tbUsuarios_usuarioModifica" FromRole="tbSucursal" ToRole="tbUsuarios" />
+  </EntityType>
+  <EntityType Name="tbTipoPago">
+    <Key>
+      <PropertyRef Name="idTipoPago" />
+    </Key>
+    <Property Name="idTipoPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbTipoPago_tbUsuarios_usuarioCrea" FromRole="tbTipoPago" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbTipoPago_tbUsuarios_usuarioModifica" FromRole="tbTipoPago" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbCompletacionCitas" Relationship="CENAODBModel.FK_tbCompletacionCitas_tbTiposPago_idtipoPago" FromRole="tbTipoPago" ToRole="tbCompletacionCitas" />
+  </EntityType>
+  <EntityType Name="tbTratamientoPaciente">
+    <Key>
+      <PropertyRef Name="idTraPaciente" />
+    </Key>
+    <Property Name="idTraPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numExpediente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idListaTratamiento" Type="Int32" Nullable="false" />
+    <Property Name="idEstado" Type="Int32" Nullable="false" />
+    <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fechaFinal" Type="DateTime" Precision="0" />
+    <Property Name="comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="montoPrima" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="montoMensualidad" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbEstado" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbEstado_idEstado" FromRole="tbTratamientoPaciente" ToRole="tbEstado" />
+    <NavigationProperty Name="tbGaleria" Relationship="CENAODBModel.FK_tbGaleria_tbTratamientoPaciente_idTraPaciente" FromRole="tbTratamientoPaciente" ToRole="tbGaleria" />
+    <NavigationProperty Name="tbListadoTratamiento" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbListadoTratamiento_idListaTratamiento" FromRole="tbTratamientoPaciente" ToRole="tbListadoTratamiento" />
+    <NavigationProperty Name="tbPaciente" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbPaciente_numExpediente" FromRole="tbTratamientoPaciente" ToRole="tbPaciente" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbUsuarios_usuarioCrea" FromRole="tbTratamientoPaciente" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbUsuarios_usuarioModifica" FromRole="tbTratamientoPaciente" ToRole="tbUsuarios" />
+  </EntityType>
+  <EntityType Name="tbUsuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codigoUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="Binary" MaxLength="64" FixedLength="true" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tbCancelacionCitas" Relationship="CENAODBModel.FK_tbCancelacionCitas_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbCancelacionCitas" />
+    <NavigationProperty Name="tbCancelacionCitas1" Relationship="CENAODBModel.FK_tbCancelacionCitas_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbCancelacionCitas" />
+    <NavigationProperty Name="tbEstado" Relationship="CENAODBModel.FK_tbEstado_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbEstado" />
+    <NavigationProperty Name="tbEstado1" Relationship="CENAODBModel.FK_tbEstado_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbEstado" />
+    <NavigationProperty Name="tbFichaClinica" Relationship="CENAODBModel.FK_tbFichaClinica_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbFichaClinica" />
+    <NavigationProperty Name="tbFichaClinica1" Relationship="CENAODBModel.FK_tbFichaClinica_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbFichaClinica" />
+    <NavigationProperty Name="tbFunciones" Relationship="CENAODBModel.FK_tbFunciones_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbFunciones" />
+    <NavigationProperty Name="tbFunciones1" Relationship="CENAODBModel.FK_tbFunciones_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbFunciones" />
+    <NavigationProperty Name="tbGaleria" Relationship="CENAODBModel.FK_tbGaleria_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbGaleria" />
+    <NavigationProperty Name="tbGaleria1" Relationship="CENAODBModel.FK_tbGaleria_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbGaleria" />
+    <NavigationProperty Name="tbListadoTratamiento" Relationship="CENAODBModel.FK_tbListadoTratamiento_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbListadoTratamiento" />
+    <NavigationProperty Name="tbListadoTratamiento1" Relationship="CENAODBModel.FK_tbListadoTratamiento_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbListadoTratamiento" />
+    <NavigationProperty Name="tbMotivosCancelacion" Relationship="CENAODBModel.FK_tbMotivosCancelacion_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbMotivosCancelacion" />
+    <NavigationProperty Name="tbMotivosCancelacion1" Relationship="CENAODBModel.FK_tbMotivosCancelacion_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbMotivosCancelacion" />
+    <NavigationProperty Name="tbPaciente" Relationship="CENAODBModel.FK_tbPaciente_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbPaciente" />
+    <NavigationProperty Name="tbPaciente1" Relationship="CENAODBModel.FK_tbPaciente_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbPaciente" />
+    <NavigationProperty Name="tbPantallas" Relationship="CENAODBModel.FK_tbPantallas_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbPantallas" />
+    <NavigationProperty Name="tbPantallas1" Relationship="CENAODBModel.FK_tbPantallas_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbPantallas" />
+    <NavigationProperty Name="tbPantallasFunciones" Relationship="CENAODBModel.FK_tbPantallasFunciones_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbPantallasFunciones" />
+    <NavigationProperty Name="tbPantallasFunciones1" Relationship="CENAODBModel.FK_tbPantallasFunciones_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbPantallasFunciones" />
+    <NavigationProperty Name="tbRoles" Relationship="CENAODBModel.FK_tbRoles_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbRoles" />
+    <NavigationProperty Name="tbRoles1" Relationship="CENAODBModel.FK_tbRoles_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbRoles" />
+    <NavigationProperty Name="tbRolesFunciones" Relationship="CENAODBModel.FK_tbRolesFunciones_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbRolesFunciones" />
+    <NavigationProperty Name="tbRolesFunciones1" Relationship="CENAODBModel.FK_tbRolesFunciones_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbRolesFunciones" />
+    <NavigationProperty Name="tbSucursal" Relationship="CENAODBModel.FK_tbSucursal_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbSucursal" />
+    <NavigationProperty Name="tbSucursal1" Relationship="CENAODBModel.FK_tbSucursal_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbSucursal" />
+    <NavigationProperty Name="tbTipoPago" Relationship="CENAODBModel.FK_tbTipoPago_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbTipoPago" />
+    <NavigationProperty Name="tbTipoPago1" Relationship="CENAODBModel.FK_tbTipoPago_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbTipoPago" />
+    <NavigationProperty Name="tbTratamientoPaciente" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbTratamientoPaciente" />
+    <NavigationProperty Name="tbTratamientoPaciente1" Relationship="CENAODBModel.FK_tbTratamientoPaciente_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbTratamientoPaciente" />
+    <NavigationProperty Name="tbUsuariosRoles" Relationship="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_idUsuario" FromRole="tbUsuarios" ToRole="tbUsuariosRoles" />
+    <NavigationProperty Name="tbUsuariosRoles1" Relationship="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbUsuariosRoles" />
+    <NavigationProperty Name="tbUsuariosRoles2" Relationship="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbUsuariosRoles" />
+    <NavigationProperty Name="tbTratamientoCitas" Relationship="CENAODBModel.FK_tbTratamientoCitas_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbTratamientoCitas" />
+    <NavigationProperty Name="tbTratamientoCitas1" Relationship="CENAODBModel.FK_tbTratamientoCitas_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbTratamientoCitas" />
+    <NavigationProperty Name="tbCompletacionCitas" Relationship="CENAODBModel.FK_tbCompletacionCitas_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbCompletacionCitas" />
+    <NavigationProperty Name="tbCompletacionCitas1" Relationship="CENAODBModel.FK_tbCompletacionCitas_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbCompletacionCitas" />
+    <NavigationProperty Name="tbAgendaCitas" Relationship="CENAODBModel.FK_tbAgenda_tbUsuarios_usuarioCrea" FromRole="tbUsuarios" ToRole="tbAgendaCitas" />
+    <NavigationProperty Name="tbAgendaCitas1" Relationship="CENAODBModel.FK_tbAgenda_tbUsuarios_usuarioModifica" FromRole="tbUsuarios" ToRole="tbAgendaCitas" />
+  </EntityType>
+  <EntityType Name="tbUsuariosRoles">
+    <Key>
+      <PropertyRef Name="IdUsuarioRol" />
+    </Key>
+    <Property Name="IdUsuarioRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbRoles" Relationship="CENAODBModel.FK_tbUsuariosRoles_tbRoles_idRol" FromRole="tbUsuariosRoles" ToRole="tbRoles" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_idUsuario" FromRole="tbUsuariosRoles" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_usuarioCrea" FromRole="tbUsuariosRoles" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios2" Relationship="CENAODBModel.FK_tbUsuariosRoles_tbUsuarios_usuarioModifica" FromRole="tbUsuariosRoles" ToRole="tbUsuarios" />
+  </EntityType>
+  <Association Name="FK_tbCancelacionCitas_tbMotivosCancelacion_idMotCancelacion">
+    <End Type="CENAODBModel.tbMotivosCancelacion" Role="tbMotivosCancelacion" Multiplicity="1" />
+    <End Type="CENAODBModel.tbCancelacionCitas" Role="tbCancelacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbMotivosCancelacion">
+        <PropertyRef Name="idMotCancelacion" />
+      </Principal>
+      <Dependent Role="tbCancelacionCitas">
+        <PropertyRef Name="idMotCancelacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCancelacionCitas_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbCancelacionCitas" Role="tbCancelacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbCancelacionCitas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCancelacionCitas_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbCancelacionCitas" Role="tbCancelacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbCancelacionCitas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbEstado_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbEstado" Role="tbEstado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbEstado">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbEstado_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbEstado" Role="tbEstado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbEstado">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPaciente_tbEstado_idEstado">
+    <End Type="CENAODBModel.tbEstado" Role="tbEstado" Multiplicity="1" />
+    <End Type="CENAODBModel.tbPaciente" Role="tbPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEstado">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="tbPaciente">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbEstado_idEstado">
+    <End Type="CENAODBModel.tbEstado" Role="tbEstado" Multiplicity="1" />
+    <End Type="CENAODBModel.tbTratamientoPaciente" Role="tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEstado">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFichaClinica_tbPaciente_numExpediente">
+    <End Type="CENAODBModel.tbPaciente" Role="tbPaciente" Multiplicity="1" />
+    <End Type="CENAODBModel.tbFichaClinica" Role="tbFichaClinica" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tbPaciente">
+        <PropertyRef Name="numExpediente" />
+      </Principal>
+      <Dependent Role="tbFichaClinica">
+        <PropertyRef Name="numExpediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFichaClinica_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbFichaClinica" Role="tbFichaClinica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbFichaClinica">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFichaClinica_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbFichaClinica" Role="tbFichaClinica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbFichaClinica">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFunciones_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbFunciones" Role="tbFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbFunciones">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbFunciones_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbFunciones" Role="tbFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbFunciones">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallasFunciones_tbFunciones_idFuncion">
+    <End Type="CENAODBModel.tbFunciones" Role="tbFunciones" Multiplicity="1" />
+    <End Type="CENAODBModel.tbPantallasFunciones" Role="tbPantallasFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbFunciones">
+        <PropertyRef Name="idFuncion" />
+      </Principal>
+      <Dependent Role="tbPantallasFunciones">
+        <PropertyRef Name="idFuncion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRolesFunciones_tbFunciones_idFuncion">
+    <End Type="CENAODBModel.tbFunciones" Role="tbFunciones" Multiplicity="1" />
+    <End Type="CENAODBModel.tbRolesFunciones" Role="tbRolesFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbFunciones">
+        <PropertyRef Name="idFuncion" />
+      </Principal>
+      <Dependent Role="tbRolesFunciones">
+        <PropertyRef Name="idFuncion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGaleria_tbTratamientoPaciente_idTraPaciente">
+    <End Type="CENAODBModel.tbTratamientoPaciente" Role="tbTratamientoPaciente" Multiplicity="1" />
+    <End Type="CENAODBModel.tbGaleria" Role="tbGaleria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbTratamientoPaciente">
+        <PropertyRef Name="idTraPaciente" />
+      </Principal>
+      <Dependent Role="tbGaleria">
+        <PropertyRef Name="idTraPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGaleria_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbGaleria" Role="tbGaleria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbGaleria">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbGaleria_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbGaleria" Role="tbGaleria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbGaleria">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbListadoTratamiento_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbListadoTratamiento" Role="tbListadoTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbListadoTratamiento">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbListadoTratamiento_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbListadoTratamiento" Role="tbListadoTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbListadoTratamiento">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbListadoTratamiento_idListaTratamiento">
+    <End Type="CENAODBModel.tbListadoTratamiento" Role="tbListadoTratamiento" Multiplicity="1" />
+    <End Type="CENAODBModel.tbTratamientoPaciente" Role="tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbListadoTratamiento">
+        <PropertyRef Name="idListaTratamiento" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="idListaTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbMotivosCancelacion_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbMotivosCancelacion" Role="tbMotivosCancelacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbMotivosCancelacion">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbMotivosCancelacion_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbMotivosCancelacion" Role="tbMotivosCancelacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbMotivosCancelacion">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPaciente_tbSucursal_idSucursal">
+    <End Type="CENAODBModel.tbSucursal" Role="tbSucursal" Multiplicity="1" />
+    <End Type="CENAODBModel.tbPaciente" Role="tbPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbSucursal">
+        <PropertyRef Name="idSucursal" />
+      </Principal>
+      <Dependent Role="tbPaciente">
+        <PropertyRef Name="idSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPaciente_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbPaciente" Role="tbPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPaciente">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPaciente_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbPaciente" Role="tbPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPaciente">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbPaciente_numExpediente">
+    <End Type="CENAODBModel.tbPaciente" Role="tbPaciente" Multiplicity="1" />
+    <End Type="CENAODBModel.tbTratamientoPaciente" Role="tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPaciente">
+        <PropertyRef Name="numExpediente" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="numExpediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallas_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbPantallas" Role="tbPantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPantallas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallas_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbPantallas" Role="tbPantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPantallas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallasFunciones_tbPantallas_idPantalla">
+    <End Type="CENAODBModel.tbPantallas" Role="tbPantallas" Multiplicity="1" />
+    <End Type="CENAODBModel.tbPantallasFunciones" Role="tbPantallasFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPantallas">
+        <PropertyRef Name="idPantalla" />
+      </Principal>
+      <Dependent Role="tbPantallasFunciones">
+        <PropertyRef Name="idPantalla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallasFunciones_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbPantallasFunciones" Role="tbPantallasFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPantallasFunciones">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbPantallasFunciones_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbPantallasFunciones" Role="tbPantallasFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbPantallasFunciones">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRoles_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbRoles" Role="tbRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbRoles">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRoles_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbRoles" Role="tbRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbRoles">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRolesFunciones_tbRoles_idRol">
+    <End Type="CENAODBModel.tbRoles" Role="tbRoles" Multiplicity="1" />
+    <End Type="CENAODBModel.tbRolesFunciones" Role="tbRolesFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbRoles">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="tbRolesFunciones">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuariosRoles_tbRoles_idRol">
+    <End Type="CENAODBModel.tbRoles" Role="tbRoles" Multiplicity="1" />
+    <End Type="CENAODBModel.tbUsuariosRoles" Role="tbUsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbRoles">
+        <PropertyRef Name="idRol" />
+      </Principal>
+      <Dependent Role="tbUsuariosRoles">
+        <PropertyRef Name="idRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRolesFunciones_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbRolesFunciones" Role="tbRolesFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbRolesFunciones">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbRolesFunciones_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbRolesFunciones" Role="tbRolesFunciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbRolesFunciones">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSucursal_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbSucursal" Role="tbSucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbSucursal">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbSucursal_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbSucursal" Role="tbSucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbSucursal">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTipoPago_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbTipoPago" Role="tbTipoPago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTipoPago">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTipoPago_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbTipoPago" Role="tbTipoPago" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTipoPago">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbTratamientoPaciente" Role="tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoPaciente_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbTratamientoPaciente" Role="tbTratamientoPaciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTratamientoPaciente">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuariosRoles_tbUsuarios_idUsuario">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbUsuariosRoles" Role="tbUsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbUsuariosRoles">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuariosRoles_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbUsuariosRoles" Role="tbUsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbUsuariosRoles">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbUsuariosRoles_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbUsuariosRoles" Role="tbUsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbUsuariosRoles">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbTratamientoCitas">
+    <Key>
+      <PropertyRef Name="idTratamientoCita" />
+    </Key>
+    <Property Name="idTratamientoCita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCita" Type="Int32" Nullable="false" />
+    <Property Name="idListaTratamiento" Type="Int32" Nullable="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbListadoTratamiento" Relationship="CENAODBModel.FK_tbTratamientoCitas_tbListadoTratamiento_idlistaTratamiento" FromRole="tbTratamientoCitas" ToRole="tbListadoTratamiento" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbTratamientoCitas_tbUsuarios_usuarioCrea" FromRole="tbTratamientoCitas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbTratamientoCitas_tbUsuarios_usuarioModifica" FromRole="tbTratamientoCitas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbCompletacionCitas" Relationship="CENAODBModel.FK_tbCompletacionCitas_tbTratamientoCitas_idTratamientoCita" FromRole="tbTratamientoCitas" ToRole="tbCompletacionCitas" />
+    <NavigationProperty Name="tbAgendaCitas" Relationship="CENAODBModel.FK_tbTratamientoCitas_tbAgendaCitas_idCita" FromRole="tbTratamientoCitas" ToRole="tbAgendaCitas" />
+  </EntityType>
+  <Association Name="FK_tbTratamientoCitas_tbListadoTratamiento_idlistaTratamiento">
+    <End Type="CENAODBModel.tbListadoTratamiento" Role="tbListadoTratamiento" Multiplicity="1" />
+    <End Type="CENAODBModel.tbTratamientoCitas" Role="tbTratamientoCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbListadoTratamiento">
+        <PropertyRef Name="idListaTratamiento" />
+      </Principal>
+      <Dependent Role="tbTratamientoCitas">
+        <PropertyRef Name="idListaTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoCitas_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbTratamientoCitas" Role="tbTratamientoCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTratamientoCitas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoCitas_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbTratamientoCitas" Role="tbTratamientoCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbTratamientoCitas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbCompletacionCitas">
+    <Key>
+      <PropertyRef Name="idCompCitas" />
+    </Key>
+    <Property Name="idCompCitas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idTratamientoCita" Type="Int32" Nullable="false" />
+    <Property Name="idTipoPago" Type="Int32" />
+    <Property Name="monto" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="medicamentosRecetados" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbTipoPago" Relationship="CENAODBModel.FK_tbCompletacionCitas_tbTiposPago_idtipoPago" FromRole="tbCompletacionCitas" ToRole="tbTipoPago" />
+    <NavigationProperty Name="tbTratamientoCitas" Relationship="CENAODBModel.FK_tbCompletacionCitas_tbTratamientoCitas_idTratamientoCita" FromRole="tbCompletacionCitas" ToRole="tbTratamientoCitas" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbCompletacionCitas_tbUsuarios_usuarioCrea" FromRole="tbCompletacionCitas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbCompletacionCitas_tbUsuarios_usuarioModifica" FromRole="tbCompletacionCitas" ToRole="tbUsuarios" />
+  </EntityType>
+  <Association Name="FK_tbCompletacionCitas_tbTiposPago_idtipoPago">
+    <End Type="CENAODBModel.tbTipoPago" Role="tbTipoPago" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbCompletacionCitas" Role="tbCompletacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbTipoPago">
+        <PropertyRef Name="idTipoPago" />
+      </Principal>
+      <Dependent Role="tbCompletacionCitas">
+        <PropertyRef Name="idTipoPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCompletacionCitas_tbTratamientoCitas_idTratamientoCita">
+    <End Type="CENAODBModel.tbTratamientoCitas" Role="tbTratamientoCitas" Multiplicity="1" />
+    <End Type="CENAODBModel.tbCompletacionCitas" Role="tbCompletacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbTratamientoCitas">
+        <PropertyRef Name="idTratamientoCita" />
+      </Principal>
+      <Dependent Role="tbCompletacionCitas">
+        <PropertyRef Name="idTratamientoCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCompletacionCitas_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbCompletacionCitas" Role="tbCompletacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbCompletacionCitas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCompletacionCitas_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbCompletacionCitas" Role="tbCompletacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbCompletacionCitas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbAgendaCitas">
+    <Key>
+      <PropertyRef Name="idCita" />
+    </Key>
+    <Property Name="idCita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numExpediente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="horaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="horaFinal" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idEstado" Type="Int32" Nullable="false" />
+    <Property Name="comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioCrea" Type="Int32" Nullable="false" />
+    <Property Name="fechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuarioModifica" Type="Int32" />
+    <Property Name="fechaModifica" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbEstado" Relationship="CENAODBModel.FK_tbAgenda_tbEstado_idEstado" FromRole="tbAgendaCitas" ToRole="tbEstado" />
+    <NavigationProperty Name="tbPaciente" Relationship="CENAODBModel.FK_tbAgenda_tbPaciente_numExpediente" FromRole="tbAgendaCitas" ToRole="tbPaciente" />
+    <NavigationProperty Name="tbUsuarios" Relationship="CENAODBModel.FK_tbAgenda_tbUsuarios_usuarioCrea" FromRole="tbAgendaCitas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbUsuarios1" Relationship="CENAODBModel.FK_tbAgenda_tbUsuarios_usuarioModifica" FromRole="tbAgendaCitas" ToRole="tbUsuarios" />
+    <NavigationProperty Name="tbCancelacionCitas" Relationship="CENAODBModel.FK_tbCancelacionCitas_tbAgenda_idCita" FromRole="tbAgendaCitas" ToRole="tbCancelacionCitas" />
+    <NavigationProperty Name="tbTratamientoCitas" Relationship="CENAODBModel.FK_tbTratamientoCitas_tbAgendaCitas_idCita" FromRole="tbAgendaCitas" ToRole="tbTratamientoCitas" />
+  </EntityType>
+  <Association Name="FK_tbAgenda_tbEstado_idEstado">
+    <End Type="CENAODBModel.tbEstado" Role="tbEstado" Multiplicity="1" />
+    <End Type="CENAODBModel.tbAgendaCitas" Role="tbAgendaCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbEstado">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="tbAgendaCitas">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbAgenda_tbPaciente_numExpediente">
+    <End Type="CENAODBModel.tbPaciente" Role="tbPaciente" Multiplicity="1" />
+    <End Type="CENAODBModel.tbAgendaCitas" Role="tbAgendaCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbPaciente">
+        <PropertyRef Name="numExpediente" />
+      </Principal>
+      <Dependent Role="tbAgendaCitas">
+        <PropertyRef Name="numExpediente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbAgenda_tbUsuarios_usuarioCrea">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="1" />
+    <End Type="CENAODBModel.tbAgendaCitas" Role="tbAgendaCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbAgendaCitas">
+        <PropertyRef Name="usuarioCrea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbAgenda_tbUsuarios_usuarioModifica">
+    <End Type="CENAODBModel.tbUsuarios" Role="tbUsuarios" Multiplicity="0..1" />
+    <End Type="CENAODBModel.tbAgendaCitas" Role="tbAgendaCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbUsuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="tbAgendaCitas">
+        <PropertyRef Name="usuarioModifica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbCancelacionCitas_tbAgenda_idCita">
+    <End Type="CENAODBModel.tbAgendaCitas" Role="tbAgendaCitas" Multiplicity="1" />
+    <End Type="CENAODBModel.tbCancelacionCitas" Role="tbCancelacionCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAgendaCitas">
+        <PropertyRef Name="idCita" />
+      </Principal>
+      <Dependent Role="tbCancelacionCitas">
+        <PropertyRef Name="idCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbTratamientoCitas_tbAgendaCitas_idCita">
+    <End Type="CENAODBModel.tbAgendaCitas" Role="tbAgendaCitas" Multiplicity="1" />
+    <End Type="CENAODBModel.tbTratamientoCitas" Role="tbTratamientoCitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbAgendaCitas">
+        <PropertyRef Name="idCita" />
+      </Principal>
+      <Dependent Role="tbTratamientoCitas">
+        <PropertyRef Name="idCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_RPT_INGRESOSPORTRATAMIENTOSDETALLADO_Result">
+    <Property Type="String" Name="Tratamiento" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="FechaPago" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarCityDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="clienteId" />
+    </Key>
+    <Property Name="clienteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="apellido" Type="varchar" MaxLength="100" />
+    <Property Name="telefono" Type="varchar" MaxLength="50" />
+    <Property Name="direccion" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="colores">
+    <Key>
+      <PropertyRef Name="colorId" />
+    </Key>
+    <Property Name="colorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IngresoOrden">
+    <Key>
+      <PropertyRef Name="ordenId" />
+    </Key>
+    <Property Name="ordenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="clienteId" Type="int" Nullable="false" />
+    <Property Name="mecanicaId" Type="int" Nullable="false" />
+    <Property Name="colorId" Type="int" Nullable="false" />
+    <Property Name="marca" Type="varchar" MaxLength="100" />
+    <Property Name="anio" Type="varchar" MaxLength="50" />
+    <Property Name="fechaIngreso" Type="date" />
+    <Property Name="Estado" Type="varchar" MaxLength="100" />
+    <Property Name="diagnostico" Type="varchar(max)" />
+    <Property Name="comentarios" Type="varchar(max)" />
+    <Property Name="fechaCrea" Type="datetime" />
+    <Property Name="usuarioCrea" Type="int" />
+    <Property Name="fechaModifica" Type="datetime" />
+    <Property Name="usuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="tipoMecanica">
+    <Key>
+      <PropertyRef Name="mecanicaId" />
+    </Key>
+    <Property Name="mecanicaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Clientes_IngresoOrden">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="1" />
+    <End Role="IngresoOrden" Type="Self.IngresoOrden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="clienteId" />
+      </Principal>
+      <Dependent Role="IngresoOrden">
+        <PropertyRef Name="clienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Color_IngresoOrden">
+    <End Role="colores" Type="Self.colores" Multiplicity="1" />
+    <End Role="IngresoOrden" Type="Self.IngresoOrden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="colores">
+        <PropertyRef Name="colorId" />
+      </Principal>
+      <Dependent Role="IngresoOrden">
+        <PropertyRef Name="colorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoMecanica_IngresoOrden">
+    <End Role="tipoMecanica" Type="Self.tipoMecanica" Multiplicity="1" />
+    <End Role="IngresoOrden" Type="Self.IngresoOrden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoMecanica">
+        <PropertyRef Name="mecanicaId" />
+      </Principal>
+      <Dependent Role="IngresoOrden">
+        <PropertyRef Name="mecanicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarCityDBModelStoreContainer">
+    <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="colores" EntityType="Self.colores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IngresoOrden" EntityType="Self.IngresoOrden" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipoMecanica" EntityType="Self.tipoMecanica" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Clientes_IngresoOrden" Association="Self.FK_Clientes_IngresoOrden">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="IngresoOrden" EntitySet="IngresoOrden" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Color_IngresoOrden" Association="Self.FK_Color_IngresoOrden">
+      <End Role="colores" EntitySet="colores" />
+      <End Role="IngresoOrden" EntitySet="IngresoOrden" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoMecanica_IngresoOrden" Association="Self.FK_TipoMecanica_IngresoOrden">
+      <End Role="tipoMecanica" EntitySet="tipoMecanica" />
+      <End Role="IngresoOrden" EntitySet="IngresoOrden" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

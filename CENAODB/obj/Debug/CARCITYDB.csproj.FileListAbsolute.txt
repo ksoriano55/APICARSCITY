@@ -1,0 +1,12 @@
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\bin\Debug\CENAODB.dll.config
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\bin\Debug\CENAODB.dll
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\bin\Debug\CENAODB.pdb
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\bin\Debug\EntityFramework.dll
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\bin\Debug\EntityFramework.xml
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\obj\Debug\CARCITYDB.csproj.AssemblyReference.cache
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\obj\Debug\CARCITYDB.csproj.CoreCompileInputs.cache
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\obj\Debug\CARCITYDB.csproj.CopyComplete
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\obj\Debug\CENAODB.dll
+C:\Users\ksoriano\Documents\GitHub\APICARSCITY\CENAODB\obj\Debug\CENAODB.pdb

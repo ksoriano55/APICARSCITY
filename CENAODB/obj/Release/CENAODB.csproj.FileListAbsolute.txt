@@ -1,0 +1,12 @@
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Release\CENAODB.dll.config
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Release\CENAODB.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Release\CENAODB.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Release\EntityFramework.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Release\EntityFramework.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Release\CENAODB.csproj.AssemblyReference.cache
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Release\CENAODB.csproj.CoreCompileInputs.cache
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Release\CENAODB.csproj.CopyComplete
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Release\CENAODB.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Release\CENAODB.pdb

@@ -1,0 +1,48 @@
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\bin\Debug\CENAODB.dll.config
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\bin\Debug\CENAODB.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\bin\Debug\CENAODB.pdb
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\bin\Debug\EntityFramework.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\bin\Debug\EntityFramework.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.CoreCompileInputs.cache
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.CopyComplete
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\obj\Debug\CENAODB.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\obj\Debug\CENAODB.pdb
+C:\Users\ksoriano\source\repos\CENAOAPI\CENAODB\obj\Debug\CENAODB.csprojAssemblyReference.cache
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.dll.config
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.pdb
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csprojAssemblyReference.cache
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.CoreCompileInputs.cache
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.CopyComplete
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.dll.config
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.CoreCompileInputs.cache
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.CopyComplete
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.pdb
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.dll.config
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\CENAODB.pdb
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.AssemblyReference.cache
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.CoreCompileInputs.cache
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.CopyComplete
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\CENAODB\obj\Debug\CENAODB.csproj.AssemblyReference.cache

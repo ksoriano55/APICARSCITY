@@ -1,0 +1,525 @@
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\CENAOAPI.dll.config
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\CENAOAPI.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\CENAOAPI.pdb
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\csc.exe
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\csc.exe.config
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\csc.rsp
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\csi.exe
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\csi.exe.config
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\csi.rsp
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.AppContext.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Console.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.IO.Compression.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Net.Http.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.ValueTuple.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\vbc.exe
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\vbc.exe.config
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\vbc.rsp
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\Antlr3.Runtime.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\Newtonsoft.Json.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Helpers.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Http.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Mvc.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Optimization.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Razor.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.WebPages.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\WebGrease.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\Newtonsoft.Json.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Helpers.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Http.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Mvc.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Optimization.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.Razor.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.WebPages.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\Antlr3.Runtime.pdb
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.Helpers.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.Http.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.Mvc.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.Optimization.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.Razor.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.WebPages.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\obj\Debug\CENAOAPI.csprojAssemblyReference.cache
+C:\Users\ksoriano\source\repos\CENAOAPI\obj\Debug\CENAOAPI.csproj.CoreCompileInputs.cache
+C:\Users\ksoriano\source\repos\CENAOAPI\obj\Debug\CENAOAPI.csproj.CopyComplete
+C:\Users\ksoriano\source\repos\CENAOAPI\obj\Debug\CENAOAPI.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\obj\Debug\CENAOAPI.pdb
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\CENAODB.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\EntityFramework.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\CENAODB.pdb
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\CENAODB.dll.config
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\EntityFramework.xml
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\ksoriano\source\repos\CENAOAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\CENAOAPI.dll.config
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\CENAOAPI.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\CENAOAPI.pdb
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\csc.exe
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\csc.exe.config
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\csc.rsp
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\csi.exe
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\csi.exe.config
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\csi.rsp
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.AppContext.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Console.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.Compression.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Net.Http.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.ValueTuple.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.exe
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.exe.config
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.rsp
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Antlr3.Runtime.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\CENAODB.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\EntityFramework.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNet.WebApi.Extensions.Compression.Server.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Options.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Newtonsoft.Json.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Buffers.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.ComponentModel.Annotations.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Memory.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Extensions.Compression.Core.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Numerics.Vectors.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Text.Encodings.Web.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Cors.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Helpers.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.Cors.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Mvc.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Optimization.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Razor.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\WebGrease.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\CENAODB.pdb
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\CENAODB.dll.config
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\EntityFramework.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Options.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Buffers.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Memory.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Numerics.Vectors.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Text.Encodings.Web.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.Cors.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Newtonsoft.Json.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Helpers.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Mvc.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Optimization.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.Razor.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Antlr3.Runtime.pdb
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Http.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Razor.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csprojAssemblyReference.cache
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csproj.CoreCompileInputs.cache
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csproj.CopyComplete
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.dll
+C:\Users\Keyla Soriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\CENAOAPI.dll.config
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\CENAOAPI.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\CENAOAPI.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\csc.exe
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\csc.exe.config
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\csc.rsp
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\csi.exe
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\csi.exe.config
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\csi.rsp
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.AppContext.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Console.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.Compression.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Net.Http.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.ValueTuple.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.exe
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.exe.config
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.rsp
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Antlr3.Runtime.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\CENAODB.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\EntityFramework.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\JWT.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNet.WebApi.Extensions.Compression.Server.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Options.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Newtonsoft.Json.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Buffers.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.ComponentModel.Annotations.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Memory.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Extensions.Compression.Core.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Numerics.Vectors.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Text.Encodings.Web.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Cors.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Helpers.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.Cors.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Mvc.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Optimization.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Razor.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\WebGrease.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\CENAODB.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\CENAODB.dll.config
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\EntityFramework.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\JWT.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\JWT.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Options.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Buffers.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Memory.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Numerics.Vectors.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Text.Encodings.Web.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.Cors.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Newtonsoft.Json.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Helpers.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Mvc.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Optimization.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.Razor.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Antlr3.Runtime.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Helpers.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Http.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Mvc.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Optimization.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.Razor.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csproj.CoreCompileInputs.cache
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csproj.CopyComplete
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.dll
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.pdb
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\CENAOAPI.dll.config
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\CENAOAPI.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\CENAOAPI.pdb
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\csc.exe
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\csc.exe.config
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\csc.rsp
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\csi.exe
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\csi.exe.config
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\csi.rsp
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.AppContext.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Console.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.Compression.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Net.Http.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Net.Sockets.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.ValueTuple.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.exe
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.exe.config
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\vbc.rsp
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Antlr3.Runtime.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\CENAODB.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\EntityFramework.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\JWT.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNet.WebApi.Extensions.Compression.Server.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Options.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Newtonsoft.Json.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Buffers.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.ComponentModel.Annotations.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Memory.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Extensions.Compression.Core.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Numerics.Vectors.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Text.Encodings.Web.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Cors.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Helpers.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Http.Cors.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Http.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Mvc.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Optimization.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Razor.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Razor.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\WebGrease.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\CENAODB.pdb
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\CENAODB.dll.config
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\EntityFramework.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\JWT.pdb
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\JWT.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Options.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Buffers.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Memory.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Numerics.Vectors.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Text.Encodings.Web.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Http.Cors.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Newtonsoft.Json.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Helpers.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Http.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Mvc.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Optimization.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.Razor.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\System.Web.WebPages.Razor.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Antlr3.Runtime.pdb
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.Helpers.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.Http.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.Mvc.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.Optimization.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.Razor.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csproj.AssemblyReference.cache
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csproj.CoreCompileInputs.cache
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csproj.CopyComplete
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.dll
+C:\Users\cindy\OneDrive\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.pdb
+C:\Users\ksoriano\Documents\GitHub\CENAOAPI\obj\Debug\CENAOAPI.csproj.AssemblyReference.cache
