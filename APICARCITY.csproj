@@ -228,9 +228,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\ColoresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InicioSesionController.cs" />
+    <Compile Include="Controllers\TipoMecanicaController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\UsuariosRolesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -238,7 +240,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AgendaCitasViewModel.cs" />
-    <Compile Include="Models\CancelarCitaViewModel.cs" />
+    <Compile Include="Models\ClientesViewModel.cs" />
     <Compile Include="Models\CompletarCitaViewModel.cs" />
     <Compile Include="Models\EstadoViewModel.cs" />
     <Compile Include="Models\FuncionesViewModel.cs" />
@@ -253,10 +255,10 @@
     <Compile Include="Models\RolesFuncionesViewModel.cs" />
     <Compile Include="Models\RolesViewModel.cs" />
     <Compile Include="Models\SucursalViewModel.cs" />
-    <Compile Include="Models\TipoPagoViewModel.cs" />
+    <Compile Include="Models\ColoresViewModel.cs" />
     <Compile Include="Models\TratamientoAgendaViewModel.cs" />
     <Compile Include="Models\TratamientoPacienteViewModel.cs" />
-    <Compile Include="Models\TratamientosViewModel.cs" />
+    <Compile Include="Models\TipoMecanicaViewModel.cs" />
     <Compile Include="Models\UsuariosRolesViewModel.cs" />
     <Compile Include="Models\UsuariosViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

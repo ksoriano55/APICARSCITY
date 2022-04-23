@@ -8,22 +8,23 @@ using CENAOAPI.Models;
 
 namespace CENAOAPI.Controllers
 {
-    public class ColoresController : ApiController
+    public class TipoMecanicaController : ApiController
     {
         [HttpGet]
-        [Route("~/api/colores")]
-        public async Task<IHttpActionResult> ListadoColores()
+        [Route("~/api/tipoMecanica")]
+        public async Task<IHttpActionResult> ListadoTipoMecanica()
         {
             try
             {
                 using (var db = new CarCityDBEntities())
                 {
-                    var colores = await db.colores.Select(x => new
+                    var tipoMecanica = await db.tipoMecanica.Select(x => new TipoMecanicaViewModel
                     {
-                        colorId = x.colorId,
-                        descripcion = x.descripcion 
+                        mecanicaId = x.mecanicaId,
+                        descripcion = x.descripcion,
+                        activo = x.activo,
                     }).ToListAsync();
-                    return Ok(colores);
+                    return Ok(tipoMecanica);
                 }
             }
             catch (Exception e)
@@ -34,18 +35,19 @@ namespace CENAOAPI.Controllers
 
 
         [HttpPost]
-        [Route("~/api/colores/registrar")]
-        public async Task<IHttpActionResult> RegistrarColores([FromBody] ColoresViewModel color)
+        [Route("~/api/tipoMecanica/registrar")]
+        public async Task<IHttpActionResult> RegistrarTipoMecanica([FromBody] TipoMecanicaViewModel tipoMecanica)
         {
             try
             {
                 using (var db = new CarCityDBEntities())
                 {
-                    var colores = new colores()
+                    var tipoMecanicas = new tipoMecanica()
                     {
-                       descripcion = color.descripcion,
+                        descripcion = tipoMecanica.descripcion,
+                        activo = tipoMecanica.activo,
                     };
-                    db.colores.Add(colores);
+                    db.tipoMecanica.Add(tipoMecanicas);
                     var result = await db.SaveChangesAsync();
                     return Ok(result);
                 }
@@ -57,21 +59,22 @@ namespace CENAOAPI.Controllers
         }
 
         [HttpPost]
-        [Route("~/api/colores/modificar")]
-        public async Task<IHttpActionResult> ModificarColores([FromBody] ColoresViewModel Colores)
+        [Route("~/api/tipoMecanica/modificar")]
+        public async Task<IHttpActionResult> ModificarTipoMecanica([FromBody] TipoMecanicaViewModel tipoMecanica)
         {
             try
             {
                 using (var db = new CarCityDBEntities())
                 {
-                    var colorDB = await db.colores.FindAsync(Colores.colorId);
+                    var tipoMecanicaDB = await db.tipoMecanica.FindAsync(tipoMecanica.mecanicaId);
 
-                    if (colorDB == null)
+                    if (tipoMecanicaDB == null)
                     {
-                        return BadRequest("Color Invalido");
+                        return BadRequest("Tipo Mecanica Invalido");
                     }
 
-                    colorDB.descripcion = Colores.descripcion;
+                    tipoMecanicaDB.descripcion = tipoMecanica.descripcion;
+                    tipoMecanicaDB.activo = tipoMecanica.activo;    
                     var result = await db.SaveChangesAsync();
                     return Ok(result);
                 }

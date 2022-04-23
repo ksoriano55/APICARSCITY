@@ -5,14 +5,12 @@ using System.Web;
 
 namespace CENAOAPI.Models
 {
-    public class TipoPagoViewModel
+    public class TipoMecanicaViewModel
     {
-        public int idTipoPago { get; set; }
+        public int mecanicaId { get; set; }
 
         public string descripcion { get; set; }
 
-        public bool activo { get; set; }
-
-        public int usuario { get; set; }
+        public Boolean activo { get; set; }
     }
 }
