@@ -25,6 +25,7 @@
     <Property Name="clienteId" Type="int" Nullable="false" />
     <Property Name="mecanicaId" Type="int" Nullable="false" />
     <Property Name="colorId" Type="int" Nullable="false" />
+    <Property Name="mecanicoId" Type="int" />
     <Property Name="marca" Type="varchar" MaxLength="100" />
     <Property Name="anio" Type="varchar" MaxLength="50" />
     <Property Name="fechaIngreso" Type="date" />
@@ -35,6 +36,15 @@
     <Property Name="usuarioCrea" Type="int" />
     <Property Name="fechaModifica" Type="datetime" />
     <Property Name="usuarioModifica" Type="int" />
+  </EntityType>
+  <EntityType Name="Mecanico">
+    <Key>
+      <PropertyRef Name="mecanicoId" />
+    </Key>
+    <Property Name="mecanicoId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="100" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tipoMecanica">
     <Key>
@@ -68,6 +78,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Mecanico_IngresoOrden">
+    <End Role="Mecanico" Type="Self.Mecanico" Multiplicity="0..1" />
+    <End Role="IngresoOrden" Type="Self.IngresoOrden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mecanico">
+        <PropertyRef Name="mecanicoId" />
+      </Principal>
+      <Dependent Role="IngresoOrden">
+        <PropertyRef Name="mecanicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TipoMecanica_IngresoOrden">
     <End Role="tipoMecanica" Type="Self.tipoMecanica" Multiplicity="1" />
     <End Role="IngresoOrden" Type="Self.IngresoOrden" Multiplicity="*" />
@@ -84,6 +106,7 @@
     <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="colores" EntityType="Self.colores" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IngresoOrden" EntityType="Self.IngresoOrden" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mecanico" EntityType="Self.Mecanico" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipoMecanica" EntityType="Self.tipoMecanica" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Clientes_IngresoOrden" Association="Self.FK_Clientes_IngresoOrden">
       <End Role="clientes" EntitySet="clientes" />
@@ -91,6 +114,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Color_IngresoOrden" Association="Self.FK_Color_IngresoOrden">
       <End Role="colores" EntitySet="colores" />
+      <End Role="IngresoOrden" EntitySet="IngresoOrden" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mecanico_IngresoOrden" Association="Self.FK_Mecanico_IngresoOrden">
+      <End Role="Mecanico" EntitySet="Mecanico" />
       <End Role="IngresoOrden" EntitySet="IngresoOrden" />
     </AssociationSet>
     <AssociationSet Name="FK_TipoMecanica_IngresoOrden" Association="Self.FK_TipoMecanica_IngresoOrden">

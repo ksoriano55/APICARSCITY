@@ -28,9 +28,11 @@ namespace CENAODB.DataBase
         public Nullable<int> usuarioCrea { get; set; }
         public Nullable<System.DateTime> fechaModifica { get; set; }
         public Nullable<int> usuarioModifica { get; set; }
+        public Nullable<int> mecanicoId { get; set; }
     
         public virtual clientes clientes { get; set; }
         public virtual colores colores { get; set; }
         public virtual tipoMecanica tipoMecanica { get; set; }
+        public virtual Mecanico Mecanico { get; set; }
     }
 }

@@ -231,6 +231,7 @@
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\ColoresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngresoOrdenController.cs" />
     <Compile Include="Controllers\InicioSesionController.cs" />
     <Compile Include="Controllers\TipoMecanicaController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
@@ -248,7 +249,7 @@
     <Compile Include="Models\IngresoTratamientoDetalladoViewModel.cs" />
     <Compile Include="Models\InicioSesionViewModel.cs" />
     <Compile Include="Models\MotivoCancelacionViewModel.cs" />
-    <Compile Include="Models\PacientesViewModel.cs" />
+    <Compile Include="Models\IngresoOrdenViewModel.cs" />
     <Compile Include="Models\PantallasFuncionesViewModel.cs" />
     <Compile Include="Models\PantallasViewModel.cs" />
     <Compile Include="Models\PermisosViewModel.cs" />

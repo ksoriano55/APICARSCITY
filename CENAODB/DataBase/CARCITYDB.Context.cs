@@ -29,5 +29,6 @@ namespace CENAODB.DataBase
         public virtual DbSet<colores> colores { get; set; }
         public virtual DbSet<IngresoOrden> IngresoOrden { get; set; }
         public virtual DbSet<tipoMecanica> tipoMecanica { get; set; }
+        public virtual DbSet<Mecanico> Mecanico { get; set; }
     }
 }

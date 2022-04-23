@@ -30,6 +30,7 @@
           <Property Name="clienteId" Type="int" Nullable="false" />
           <Property Name="mecanicaId" Type="int" Nullable="false" />
           <Property Name="colorId" Type="int" Nullable="false" />
+          <Property Name="mecanicoId" Type="int" />
           <Property Name="marca" Type="varchar" MaxLength="100" />
           <Property Name="anio" Type="varchar" MaxLength="50" />
           <Property Name="fechaIngreso" Type="date" />
@@ -40,6 +41,15 @@
           <Property Name="usuarioCrea" Type="int" />
           <Property Name="fechaModifica" Type="datetime" />
           <Property Name="usuarioModifica" Type="int" />
+        </EntityType>
+        <EntityType Name="Mecanico">
+          <Key>
+            <PropertyRef Name="mecanicoId" />
+          </Key>
+          <Property Name="mecanicoId" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="100" />
+          <Property Name="Telefono" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tipoMecanica">
           <Key>
@@ -73,6 +83,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Mecanico_IngresoOrden">
+          <End Role="Mecanico" Type="Self.Mecanico" Multiplicity="0..1" />
+          <End Role="IngresoOrden" Type="Self.IngresoOrden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mecanico">
+              <PropertyRef Name="mecanicoId" />
+            </Principal>
+            <Dependent Role="IngresoOrden">
+              <PropertyRef Name="mecanicoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TipoMecanica_IngresoOrden">
           <End Role="tipoMecanica" Type="Self.tipoMecanica" Multiplicity="1" />
           <End Role="IngresoOrden" Type="Self.IngresoOrden" Multiplicity="*" />
@@ -89,6 +111,7 @@
           <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="colores" EntityType="Self.colores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IngresoOrden" EntityType="Self.IngresoOrden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mecanico" EntityType="Self.Mecanico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipoMecanica" EntityType="Self.tipoMecanica" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Clientes_IngresoOrden" Association="Self.FK_Clientes_IngresoOrden">
             <End Role="clientes" EntitySet="clientes" />
@@ -96,6 +119,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Color_IngresoOrden" Association="Self.FK_Color_IngresoOrden">
             <End Role="colores" EntitySet="colores" />
+            <End Role="IngresoOrden" EntitySet="IngresoOrden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mecanico_IngresoOrden" Association="Self.FK_Mecanico_IngresoOrden">
+            <End Role="Mecanico" EntitySet="Mecanico" />
             <End Role="IngresoOrden" EntitySet="IngresoOrden" />
           </AssociationSet>
           <AssociationSet Name="FK_TipoMecanica_IngresoOrden" Association="Self.FK_TipoMecanica_IngresoOrden">
@@ -147,6 +174,8 @@
           <NavigationProperty Name="clientes" Relationship="CarCityDBModel.FK_Clientes_IngresoOrden" FromRole="IngresoOrden" ToRole="clientes" />
           <NavigationProperty Name="colores" Relationship="CarCityDBModel.FK_Color_IngresoOrden" FromRole="IngresoOrden" ToRole="colores" />
           <NavigationProperty Name="tipoMecanica" Relationship="CarCityDBModel.FK_TipoMecanica_IngresoOrden" FromRole="IngresoOrden" ToRole="tipoMecanica" />
+          <Property Name="mecanicoId" Type="Int32" />
+          <NavigationProperty Name="Mecanico" Relationship="CarCityDBModel.FK_Mecanico_IngresoOrden" FromRole="IngresoOrden" ToRole="Mecanico" />
         </EntityType>
         <EntityContainer Name="CarCityDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="clientes" EntityType="Self.clientes" />
@@ -163,6 +192,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_TipoMecanica_IngresoOrden" Association="CarCityDBModel.FK_TipoMecanica_IngresoOrden">
             <End Role="tipoMecanica" EntitySet="tipoMecanica" />
+            <End Role="IngresoOrden" EntitySet="IngresoOrden" />
+          </AssociationSet>
+          <EntitySet Name="Mecanico" EntityType="CarCityDBModel.Mecanico" />
+          <AssociationSet Name="FK_Mecanico_IngresoOrden" Association="CarCityDBModel.FK_Mecanico_IngresoOrden">
+            <End Role="Mecanico" EntitySet="Mecanico" />
             <End Role="IngresoOrden" EntitySet="IngresoOrden" />
           </AssociationSet>
         </EntityContainer>
@@ -211,6 +245,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Mecanico">
+          <Key>
+            <PropertyRef Name="mecanicoId" />
+          </Key>
+          <Property Name="mecanicoId" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="IngresoOrden" Relationship="CarCityDBModel.FK_Mecanico_IngresoOrden" FromRole="Mecanico" ToRole="IngresoOrden" />
+        </EntityType>
+        <Association Name="FK_Mecanico_IngresoOrden">
+          <End Type="CarCityDBModel.Mecanico" Role="Mecanico" Multiplicity="0..1" />
+          <End Type="CarCityDBModel.IngresoOrden" Role="IngresoOrden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mecanico">
+              <PropertyRef Name="mecanicoId" />
+            </Principal>
+            <Dependent Role="IngresoOrden">
+              <PropertyRef Name="mecanicoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -239,6 +295,7 @@
           <EntitySetMapping Name="IngresoOrden">
             <EntityTypeMapping TypeName="CarCityDBModel.IngresoOrden">
               <MappingFragment StoreEntitySet="IngresoOrden">
+                <ScalarProperty Name="mecanicoId" ColumnName="mecanicoId" />
                 <ScalarProperty Name="ordenId" ColumnName="ordenId" />
                 <ScalarProperty Name="clienteId" ColumnName="clienteId" />
                 <ScalarProperty Name="mecanicaId" ColumnName="mecanicaId" />
@@ -262,6 +319,16 @@
                 <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="mecanicaId" ColumnName="mecanicaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mecanico">
+            <EntityTypeMapping TypeName="CarCityDBModel.Mecanico">
+              <MappingFragment StoreEntitySet="Mecanico">
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="mecanicoId" ColumnName="mecanicoId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

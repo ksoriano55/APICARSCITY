@@ -40,6 +40,8 @@
     <NavigationProperty Name="clientes" Relationship="CarCityDBModel.FK_Clientes_IngresoOrden" FromRole="IngresoOrden" ToRole="clientes" />
     <NavigationProperty Name="colores" Relationship="CarCityDBModel.FK_Color_IngresoOrden" FromRole="IngresoOrden" ToRole="colores" />
     <NavigationProperty Name="tipoMecanica" Relationship="CarCityDBModel.FK_TipoMecanica_IngresoOrden" FromRole="IngresoOrden" ToRole="tipoMecanica" />
+    <Property Name="mecanicoId" Type="Int32" />
+    <NavigationProperty Name="Mecanico" Relationship="CarCityDBModel.FK_Mecanico_IngresoOrden" FromRole="IngresoOrden" ToRole="Mecanico" />
   </EntityType>
   <EntityContainer Name="CarCityDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="clientes" EntityType="Self.clientes" />
@@ -56,6 +58,11 @@
     </AssociationSet>
     <AssociationSet Name="FK_TipoMecanica_IngresoOrden" Association="CarCityDBModel.FK_TipoMecanica_IngresoOrden">
       <End Role="tipoMecanica" EntitySet="tipoMecanica" />
+      <End Role="IngresoOrden" EntitySet="IngresoOrden" />
+    </AssociationSet>
+    <EntitySet Name="Mecanico" EntityType="CarCityDBModel.Mecanico" />
+    <AssociationSet Name="FK_Mecanico_IngresoOrden" Association="CarCityDBModel.FK_Mecanico_IngresoOrden">
+      <End Role="Mecanico" EntitySet="Mecanico" />
       <End Role="IngresoOrden" EntitySet="IngresoOrden" />
     </AssociationSet>
   </EntityContainer>
@@ -101,6 +108,28 @@
       </Principal>
       <Dependent Role="IngresoOrden">
         <PropertyRef Name="mecanicaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Mecanico">
+    <Key>
+      <PropertyRef Name="mecanicoId" />
+    </Key>
+    <Property Name="mecanicoId" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="IngresoOrden" Relationship="CarCityDBModel.FK_Mecanico_IngresoOrden" FromRole="Mecanico" ToRole="IngresoOrden" />
+  </EntityType>
+  <Association Name="FK_Mecanico_IngresoOrden">
+    <End Type="CarCityDBModel.Mecanico" Role="Mecanico" Multiplicity="0..1" />
+    <End Type="CarCityDBModel.IngresoOrden" Role="IngresoOrden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mecanico">
+        <PropertyRef Name="mecanicoId" />
+      </Principal>
+      <Dependent Role="IngresoOrden">
+        <PropertyRef Name="mecanicoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
