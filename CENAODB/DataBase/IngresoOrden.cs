@@ -34,5 +34,6 @@ namespace CENAODB.DataBase
         public virtual colores colores { get; set; }
         public virtual tipoMecanica tipoMecanica { get; set; }
         public virtual Mecanico Mecanico { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
     }
 }

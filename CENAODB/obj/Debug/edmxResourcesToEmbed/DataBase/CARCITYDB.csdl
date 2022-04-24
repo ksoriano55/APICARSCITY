@@ -42,6 +42,7 @@
     <NavigationProperty Name="tipoMecanica" Relationship="CarCityDBModel.FK_TipoMecanica_IngresoOrden" FromRole="IngresoOrden" ToRole="tipoMecanica" />
     <Property Name="mecanicoId" Type="Int32" />
     <NavigationProperty Name="Mecanico" Relationship="CarCityDBModel.FK_Mecanico_IngresoOrden" FromRole="IngresoOrden" ToRole="Mecanico" />
+    <NavigationProperty Name="Usuarios" Relationship="CarCityDBModel.FK_Mecanico_IngresoOrden1" FromRole="IngresoOrden" ToRole="Usuarios" />
   </EntityType>
   <EntityContainer Name="CarCityDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="clientes" EntityType="Self.clientes" />
@@ -65,6 +66,27 @@
       <End Role="Mecanico" EntitySet="Mecanico" />
       <End Role="IngresoOrden" EntitySet="IngresoOrden" />
     </AssociationSet>
+    <EntitySet Name="Usuarios" EntityType="CarCityDBModel.Usuarios" />
+    <AssociationSet Name="FK_Mecanico_IngresoOrden1" Association="CarCityDBModel.FK_Mecanico_IngresoOrden1">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="IngresoOrden" EntitySet="IngresoOrden" />
+    </AssociationSet>
+    <FunctionImport Name="SP_CREAR_USUARIO" ReturnType="Collection(CarCityDBModel.SP_CREAR_USUARIO_Result)">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido" Mode="In" Type="String" />
+      <Parameter Name="telefono" Mode="In" Type="String" />
+      <Parameter Name="esMecanico" Mode="In" Type="Boolean" />
+      <Parameter Name="codigoUsuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RESETEAR_PASSWORD" ReturnType="Collection(CarCityDBModel.SP_RESETEAR_PASSWORD_Result)">
+      <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+      <Parameter Name="newPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_INICIO_SESION" ReturnType="Collection(CarCityDBModel.SP_INICIO_SESION_Result)">
+      <Parameter Name="codigoUsuario" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="tipoMecanica">
     <Key>
@@ -133,4 +155,41 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="codigoUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="Binary" MaxLength="64" FixedLength="true" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <Property Name="esMecanico" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="IngresoOrden" Relationship="CarCityDBModel.FK_Mecanico_IngresoOrden1" FromRole="Usuarios" ToRole="IngresoOrden" />
+  </EntityType>
+  <Association Name="FK_Mecanico_IngresoOrden1">
+    <End Type="CarCityDBModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="CarCityDBModel.IngresoOrden" Role="IngresoOrden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="IngresoOrden">
+        <PropertyRef Name="mecanicoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SP_CREAR_USUARIO_Result">
+    <Property Type="String" Name="MessageError" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_RESETEAR_PASSWORD_Result">
+    <Property Type="String" Name="MessageError" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_INICIO_SESION_Result">
+    <Property Type="Int32" Name="idUsuario" Nullable="false" />
+    <Property Type="String" Name="codigoUsuario" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="esActivo" Nullable="false" />
+  </ComplexType>
 </Schema>

@@ -15,7 +15,7 @@ namespace CENAOAPI.Controllers
 {
     public class InicioSesionController : ApiController
     {
-      /*  private readonly AutenticacionServices _AutenticacionServices;
+        private readonly AutenticacionServices _AutenticacionServices;
         public InicioSesionController()
         {
             _AutenticacionServices = new AutenticacionServices();
@@ -55,7 +55,7 @@ namespace CENAOAPI.Controllers
         }
 
 
-        [HttpGet]
+        /*[HttpGet]
         [Route("~/api/Accesos/{Usuario}")]
         public async Task<IHttpActionResult> GetPermisos(string Usuario)
         {

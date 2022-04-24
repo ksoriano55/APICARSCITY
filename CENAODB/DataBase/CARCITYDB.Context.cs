@@ -12,6 +12,8 @@ namespace CENAODB.DataBase
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class CarCityDBEntities : DbContext
     {
@@ -30,5 +32,61 @@ namespace CENAODB.DataBase
         public virtual DbSet<IngresoOrden> IngresoOrden { get; set; }
         public virtual DbSet<tipoMecanica> tipoMecanica { get; set; }
         public virtual DbSet<Mecanico> Mecanico { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
+    
+        public virtual ObjectResult<SP_CREAR_USUARIO_Result> SP_CREAR_USUARIO(string nombre, string apellido, string telefono, Nullable<bool> esMecanico, string codigoUsuario, string password)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var apellidoParameter = apellido != null ?
+                new ObjectParameter("apellido", apellido) :
+                new ObjectParameter("apellido", typeof(string));
+    
+            var telefonoParameter = telefono != null ?
+                new ObjectParameter("telefono", telefono) :
+                new ObjectParameter("telefono", typeof(string));
+    
+            var esMecanicoParameter = esMecanico.HasValue ?
+                new ObjectParameter("esMecanico", esMecanico) :
+                new ObjectParameter("esMecanico", typeof(bool));
+    
+            var codigoUsuarioParameter = codigoUsuario != null ?
+                new ObjectParameter("codigoUsuario", codigoUsuario) :
+                new ObjectParameter("codigoUsuario", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CREAR_USUARIO_Result>("SP_CREAR_USUARIO", nombreParameter, apellidoParameter, telefonoParameter, esMecanicoParameter, codigoUsuarioParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<SP_RESETEAR_PASSWORD_Result> SP_RESETEAR_PASSWORD(Nullable<int> idUsuario, string newPassword)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(int));
+    
+            var newPasswordParameter = newPassword != null ?
+                new ObjectParameter("newPassword", newPassword) :
+                new ObjectParameter("newPassword", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_RESETEAR_PASSWORD_Result>("SP_RESETEAR_PASSWORD", idUsuarioParameter, newPasswordParameter);
+        }
+    
+        public virtual ObjectResult<SP_INICIO_SESION_Result> SP_INICIO_SESION(string codigoUsuario, string password)
+        {
+            var codigoUsuarioParameter = codigoUsuario != null ?
+                new ObjectParameter("codigoUsuario", codigoUsuario) :
+                new ObjectParameter("codigoUsuario", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_INICIO_SESION_Result>("SP_INICIO_SESION", codigoUsuarioParameter, passwordParameter);
+        }
     }
 }

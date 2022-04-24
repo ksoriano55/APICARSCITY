@@ -60,5 +60,42 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="CarCityDBModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="esMecanico" ColumnName="esMecanico" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="codigoUsuario" ColumnName="codigoUsuario" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_CREAR_USUARIO" FunctionName="CarCityDBModel.Store.SP_CREAR_USUARIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarCityDBModel.SP_CREAR_USUARIO_Result">
+          <ScalarProperty Name="MessageError" ColumnName="MessageError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_RESETEAR_PASSWORD" FunctionName="CarCityDBModel.Store.SP_RESETEAR_PASSWORD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarCityDBModel.SP_RESETEAR_PASSWORD_Result">
+          <ScalarProperty Name="MessageError" ColumnName="MessageError" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_INICIO_SESION" FunctionName="CarCityDBModel.Store.SP_INICIO_SESION">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CarCityDBModel.SP_INICIO_SESION_Result">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="codigoUsuario" ColumnName="codigoUsuario" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

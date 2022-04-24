@@ -14,6 +14,8 @@
         <AssociationConnector Association="CarCityDBModel.FK_TipoMecanica_IngresoOrden" />
         <EntityTypeShape EntityType="CarCityDBModel.Mecanico" Width="1.5" PointX="3.375" PointY="5.875" />
         <AssociationConnector Association="CarCityDBModel.FK_Mecanico_IngresoOrden" />
+        <EntityTypeShape EntityType="CarCityDBModel.Usuarios" Width="1.5" PointX="5.375" PointY="8" />
+        <AssociationConnector Association="CarCityDBModel.FK_Mecanico_IngresoOrden1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

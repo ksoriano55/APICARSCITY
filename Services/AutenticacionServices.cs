@@ -29,11 +29,11 @@ namespace CENAOAPI.Services
         IJwtDecoder decoder;
         IJwtEncoder encoder;
 
-       /* public AuthenticationResponse Authentication(string usuario)
+        public AuthenticationResponse Authentication(string usuario)
         {
             using (var db = new CarCityDBEntities())
             {
-               var usuarioDB = db.tbUsuarios.Where(x => x.codigoUsuario == usuario).FirstOrDefault();
+               var usuarioDB = db.Usuarios.Where(x => x.codigoUsuario == usuario).FirstOrDefault();
                 var token = encoder.Encode(new InicioSesionViewModel
                 {
                     id = usuarioDB.idUsuario,
@@ -44,7 +44,7 @@ namespace CENAOAPI.Services
                 
                 return new AuthenticationResponse { Message = "Ok", id= usuarioDB.idUsuario, usuario = usuarioDB.codigoUsuario, esActivo= usuarioDB.esActivo, Token = token };
             }
-        }*/
+        }
 
         public InicioSesionViewModel Validate(string token)
         {

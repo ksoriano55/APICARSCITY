@@ -11,7 +11,7 @@ namespace CENAOAPI.Controllers
 {
     public class UsuariosController : ApiController
     {
-        /*private CarCityDBEntities db = new CarCityDBEntities();
+        private CarCityDBEntities db = new CarCityDBEntities();
 
         [HttpGet]
         [Route("~/api/usuarios")]
@@ -21,8 +21,12 @@ namespace CENAOAPI.Controllers
             {
                 using (var db = new CarCityDBEntities())
                 {
-                    var listaUsuarios = await db.tbUsuarios.Select(x => new
+                    var listaUsuarios = await db.Usuarios.Select(x => new
                     {
+                        nombre = x.nombre,
+                        apellido = x.apellido,
+                        telefono = x.telefono,
+                        esMecanico = x.esMecanico,
                         idUsuario = x.idUsuario,
                         codigoUsuario = x.codigoUsuario,
                         esActivo = x.esActivo
@@ -36,7 +40,7 @@ namespace CENAOAPI.Controllers
             }
         }
 
-        [HttpGet]
+      /*  [HttpGet]
         [Route("~/api/usuarios/activos")]
         public async Task<IHttpActionResult> ObtenerUsuarioActivos()
         {
@@ -44,7 +48,7 @@ namespace CENAOAPI.Controllers
             {
                 using (var db = new CarCityDBEntities())
                 {
-                    var usuariosActivos = await db.tbUsuarios.Where(x => x.esActivo == true).Select(x => new 
+                    var usuariosActivos = await db.Usuarios.Where(x => x.esActivo == true).Select(x => new 
                     { 
                       Id = x.idUsuario, 
                       Usuario = x.codigoUsuario 
@@ -56,7 +60,7 @@ namespace CENAOAPI.Controllers
             {
                 return BadRequest(e.Message);
             }
-        }
+        }*/
 
         [HttpPost]
         [Route("~/api/usuarios/registrar")]
@@ -66,7 +70,7 @@ namespace CENAOAPI.Controllers
             {
                 try
                 {
-                    var ValidarUsuario = db.tbUsuarios.Where(x => x.codigoUsuario.ToLower().Trim() == usuarios.codigoUsuario.ToLower().Trim()).ToList();
+                    var ValidarUsuario = db.Usuarios.Where(x => x.codigoUsuario.ToLower().Trim() == usuarios.codigoUsuario.ToLower().Trim()).ToList();
                     if (ValidarUsuario.Count() > 0) {
                         return BadRequest("Ya existe este usuario.");
                     }
@@ -74,7 +78,7 @@ namespace CENAOAPI.Controllers
                     {
                         IEnumerable<object> CrearUsuarios = null;
                         var MensajeError = "";
-                        CrearUsuarios = db.SP_CREAR_USUARIO(usuarios.codigoUsuario.Trim(), usuarios.newPassword);
+                        CrearUsuarios = db.SP_CREAR_USUARIO(usuarios.nombre, usuarios.apellido, usuarios.telefono, usuarios.esMecanico, usuarios.codigoUsuario.Trim(), usuarios.newPassword);
                         foreach (SP_CREAR_USUARIO_Result ProcedureCreateUser in CrearUsuarios)
                             MensajeError = ProcedureCreateUser.MessageError;
                         if (MensajeError.StartsWith("1"))
@@ -105,9 +109,13 @@ namespace CENAOAPI.Controllers
             {
                 try
                 {
-                    var EditarUsuarios = db.tbUsuarios.Find(idUsuario);
+                    var EditarUsuarios = db.Usuarios.Find(idUsuario);
                     if (EditarUsuarios != null)
                     {
+                        EditarUsuarios.nombre = editUsuarios.nombre;
+                        EditarUsuarios.apellido = editUsuarios.apellido;
+                        EditarUsuarios.telefono = editUsuarios.telefono;
+                        EditarUsuarios.esMecanico = editUsuarios.esMecanico;
                         EditarUsuarios.codigoUsuario = editUsuarios.codigoUsuario.Trim();
                         EditarUsuarios.esActivo = editUsuarios.esActivo;
                         db.Entry(EditarUsuarios).State = EntityState.Modified;
@@ -138,7 +146,7 @@ namespace CENAOAPI.Controllers
                 {
                     IEnumerable<object> list = null;
                     var MensajeError = "";
-                    var BuscarUsuario = db.tbUsuarios.Find(idUsuario);
+                    var BuscarUsuario = db.Usuarios.Find(idUsuario);
                     if (BuscarUsuario != null)
                     {
                         list = db.SP_RESETEAR_PASSWORD(idUsuario, newPassword);
@@ -165,6 +173,6 @@ namespace CENAOAPI.Controllers
                     return BadRequest(e.ToString());
                 }
             }
-        }*/
+        }
     }
 }
